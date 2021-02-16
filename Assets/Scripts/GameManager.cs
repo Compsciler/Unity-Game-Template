@@ -61,11 +61,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] internal bool areParticlesOn = true;
     [SerializeField] internal bool isTutorial = false;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-
         mainCamera = Camera.main;
         generateWallsScript = spawnManager.GetComponent<GenerateWalls>();
         spawnPeopleScript = spawnManager.GetComponent<SpawnPeople>();

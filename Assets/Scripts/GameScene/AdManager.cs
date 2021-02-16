@@ -22,11 +22,17 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     internal int adsWatchedTotal = 0;
     internal int maxAdsWatchedPerGame = 1;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-
         isTimeScaleZeroDuringAd = isTestMode;
         if (!isInitialized)
         {

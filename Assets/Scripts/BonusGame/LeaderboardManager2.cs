@@ -38,9 +38,12 @@ public class LeaderboardManager2 : MonoBehaviour
 	private string[] leaderboardStrings = {"Leaderboard"};
 
 	void Awake()
-	{
-		instance = this;
-	}
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
 	// Start is called before the first frame update
 	void Start()

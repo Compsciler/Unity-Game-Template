@@ -16,11 +16,17 @@ public class AdManager2 : MonoBehaviour, IUnityAdsListener
 
     internal bool isAdCompleted = false;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-
         if (!isInitialized)
         {
             isInitialized = true;

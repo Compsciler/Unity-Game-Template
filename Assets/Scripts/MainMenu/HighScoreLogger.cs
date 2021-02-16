@@ -11,11 +11,25 @@ public class HighScoreLogger : MonoBehaviour
 
     internal string[] highScoreStrings = {"NormalHighScore", "DifficultHighScore", "ExtremeHighScore", "QuickHighScore", "BreakneckHighScore", "ObliqueHighScore", "HolesomeHighScore", "UltimateHighScore"};
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        
     }
 
     // Update is called once per frame

@@ -26,9 +26,12 @@ public class DialogueManager : MonoBehaviour
 	private float rotationSpeed = -75f;
 
 	// Use this for initialization
-	void Start()
+	void Awake()
 	{
-		instance = this;
+		if (instance == null)
+		{
+			instance = this;
+		}
 	}
 
 	public void StartDialogue(Dialogue dialogue)

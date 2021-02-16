@@ -19,10 +19,17 @@ public class AudioManager : MonoBehaviour
     // private bool isSFX_Muted;
     // private bool isMusicPaused;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
         SFX_Source = GetComponents<AudioSource>()[0];
         musicSource = GetComponents<AudioSource>()[1];
 
