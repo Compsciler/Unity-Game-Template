@@ -7,13 +7,6 @@ public class TestingZone : MonoBehaviour
 {
     public TMP_InputField inputFieldComponent;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         string inputFieldText = inputFieldComponent.text;

@@ -45,7 +45,6 @@ public class LeaderboardManager2 : MonoBehaviour
         }
     }
 
-	// Start is called before the first frame update
 	void Start()
 	{
 		allOnlineHighScores = new HighScore2[publicCodes.Length][];

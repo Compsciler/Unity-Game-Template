@@ -9,7 +9,6 @@ public class AllClearDisabler : MonoBehaviour
     public GameObject[] enableIfNotAllClear;
     public GameObject[] disableIfNotAllClear;
 
-    // Start is called before the first frame update
     void Start()
     {
         isAllClear = (PlayerPrefs.GetInt("IsAllClear", 1) == 1);
@@ -24,11 +23,5 @@ public class AllClearDisabler : MonoBehaviour
                 go.SetActive(false);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

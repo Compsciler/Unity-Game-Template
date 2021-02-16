@@ -34,7 +34,6 @@ public class LogoAnimation : MonoBehaviour
 
     // Current animation time: 1.2 + 7 * (0.35 + 0.05) + 2
 
-    // Start is called before the first frame update
     void Start()
     {
         svgImage = svgImageGO.GetComponent<Unity.VectorGraphics.SVGImage>();
@@ -57,12 +56,6 @@ public class LogoAnimation : MonoBehaviour
         BeforeMainMenuLoaded.isFirstTimeLoadingSinceAppOpened = false;
 
         DisplayCorrectLogoScreenSpeedUI();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator<float> AnimationProcess()

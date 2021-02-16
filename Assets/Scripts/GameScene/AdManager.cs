@@ -30,7 +30,6 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         isTimeScaleZeroDuringAd = isTestMode;
@@ -56,12 +55,6 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         {
             descriptionErrorText.text = "Watch ad to reset infection timers";
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator<float> ShowAd()

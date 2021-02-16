@@ -11,7 +11,6 @@ public class RateGame : MonoBehaviour
     public GameObject rateButton;
     public GameObject creditsButton;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (!Constants.isMobilePlatform)
@@ -30,12 +29,6 @@ public class RateGame : MonoBehaviour
             PlayerPrefs.SetInt("StoreReviewRequestTotal", 1);
             Debug.Log("Requeseted store review!");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void RequestStoreReview()

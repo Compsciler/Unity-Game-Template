@@ -9,7 +9,6 @@ public class CanvasScalerMatch : MonoBehaviour
     private float defaultAspectRatio = 16f / 9f;
     private float aspectRatio;
 
-    // Start is called before the first frame update
     void Start()
     {
         aspectRatio = (float)Screen.width / Screen.height;
@@ -17,11 +16,5 @@ public class CanvasScalerMatch : MonoBehaviour
         {
             GetComponent<CanvasScaler>().matchWidthOrHeight = match;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

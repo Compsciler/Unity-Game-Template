@@ -19,14 +19,12 @@ public class LineController : MonoBehaviour
     private bool isRotating = false;
     private bool isClockwise;
 
-    // Start is called before the first frame update
     void Start()
     {
         lineRenderer = GetComponentInChildren<LineRenderer>();
         GenerateRandomLine();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isRotating)

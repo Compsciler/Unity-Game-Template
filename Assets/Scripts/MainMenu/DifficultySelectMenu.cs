@@ -47,7 +47,6 @@ public class DifficultySelectMenu : MonoBehaviour
         new int[,] {{2, 30}, {4, 20}, {6, 35}}  // Changed from {2, 40} to {2, 20}
     };
 
-    // Start is called before the first frame update
     void Start()
     {
         descriptionTexts = descriptionTextsHolder.GetChildren();
@@ -65,12 +64,6 @@ public class DifficultySelectMenu : MonoBehaviour
     void OnEnable()
     {
         SetUpUnlocksAndScores();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Play(int gameMode)

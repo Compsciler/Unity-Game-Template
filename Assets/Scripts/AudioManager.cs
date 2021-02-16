@@ -27,7 +27,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         SFX_Source = GetComponents<AudioSource>()[0];
@@ -48,12 +47,6 @@ public class AudioManager : MonoBehaviour
         */
         DisplayCorrectSFX();
         DisplayCorrectMusic();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ToggleSFX()

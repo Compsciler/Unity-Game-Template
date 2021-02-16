@@ -33,16 +33,9 @@ public class UsernameCreation : MonoBehaviour
     private IEnumerator checkIfAllClearIEnumerator;
     private bool checkIfAllClearFinished = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         beforeMainMenuLoadedScript = GameObject.Find("Background").GetComponent<BeforeMainMenuLoaded>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public IEnumerator CreateUsername()  // Usernames may only contain [A-Z][a-z][0-9]_ and must be unique by lowercase

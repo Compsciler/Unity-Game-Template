@@ -69,7 +69,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
@@ -98,7 +97,6 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneUnloaded += OnSceneUnloaded;  // Adding OnSceneUnloaded() to delegate call when scene unloaded
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isGameActive)
@@ -120,6 +118,7 @@ public class GameManager : MonoBehaviour
             */
         }
     }
+
     void LateUpdate()
     {
         if (isGameActivePreviousFrame != isGameActive)

@@ -16,7 +16,7 @@ public class OptionsMenu : MonoBehaviour
     public GameObject scrollbarText;
     public GameObject dateDropdown;
     public GameObject yearText;
-    // Start is called before the first frame update
+
     void Start()
     {
         titleLetterStartPoses = new Vector3[titleLetters.Length];
@@ -29,11 +29,6 @@ public class OptionsMenu : MonoBehaviour
         lowercaseS_EndPos = new Vector3(-70f, titleLetterStartPoses[2].y, titleLetterStartPoses[2].z);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void UpdateScrollbarText()
     {
         Scrollbar scrollbarComponent = EventSystem.current.currentSelectedGameObject.GetComponent<Scrollbar>();

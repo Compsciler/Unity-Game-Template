@@ -40,7 +40,6 @@ public class OptionsEasterEgg : MonoBehaviour
     public float fadeTime;
     public GameObject[] enableAfterFading;
 
-    // Start is called before the first frame update
     void Start()
     {
         Transform optionsMenuTransform = GameObject.Find("Options Menu").transform;
@@ -55,7 +54,6 @@ public class OptionsEasterEgg : MonoBehaviour
         backButtonHoldTimer = backButtonHoldTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!isAllShowing)

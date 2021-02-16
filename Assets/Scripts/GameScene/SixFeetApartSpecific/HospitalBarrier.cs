@@ -11,16 +11,9 @@ public class HospitalBarrier : MonoBehaviour
 
     private float unoccupyHospitalTime = 2f;
 
-    // Start is called before the first frame update
     void Start()
     {
         // transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     // Agent has isTrigger enabled

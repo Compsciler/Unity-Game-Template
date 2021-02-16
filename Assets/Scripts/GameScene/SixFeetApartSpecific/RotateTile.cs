@@ -12,17 +12,10 @@ public class RotateTile : MonoBehaviour
 
     internal static int tileClicksRemainingToTriggerDialogue;
 
-    // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         mainCamera.eventMask = 1; //  OnMouseDown only triggers for Layer 0: Default  // mainCamera.eventMask & (1 << 10)  OnMouseDown ignores Layer 10: Hospital Barriers
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnMouseDown()

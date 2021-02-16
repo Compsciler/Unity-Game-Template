@@ -11,14 +11,12 @@ public class PersonMouseController : MonoBehaviour
     private NavMeshAgent agent;
     private NavMeshPath navMeshPath;
 
-    // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         navMeshPath = new NavMeshPath();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(1))

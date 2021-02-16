@@ -12,13 +12,6 @@ public class HospitalTile : MonoBehaviour
     public GameObject hospitalBarriers;
     // public GameObject[] barriers;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         isOccupiedSerialized = isOccupied;

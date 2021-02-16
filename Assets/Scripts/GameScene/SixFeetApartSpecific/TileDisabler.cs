@@ -8,7 +8,6 @@ public class TileDisabler : MonoBehaviour
     public GameObject[] tileSets;
     public bool[] tileSetEnables = {true, true};
 
-    // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < tileSets.Length; i++)
@@ -24,11 +23,5 @@ public class TileDisabler : MonoBehaviour
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -9,18 +9,6 @@ public class TestingButton : MonoBehaviour
 {
     public TMP_InputField inputField;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TestingFunction()
     {
         // Debug.Log("Hospital occupied: " + HospitalTile.isOccupied);

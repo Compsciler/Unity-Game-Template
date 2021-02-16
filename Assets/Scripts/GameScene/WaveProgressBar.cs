@@ -15,13 +15,11 @@ public class WaveProgressBar : MonoBehaviour
 
     public GameObject spawnManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         spawnPeopleScript = spawnManager.GetComponent<SpawnPeople>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.instance.hasGameStarted)

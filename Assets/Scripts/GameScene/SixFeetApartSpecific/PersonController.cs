@@ -110,7 +110,6 @@ public class PersonController : MonoBehaviour
     private Vector3[] pathDestinations;
     private int pathDestinationIndex = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
@@ -164,7 +163,6 @@ public class PersonController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         isInfectedWithoutSymptoms = (isInfected && (agent.agentTypeID == Constants.healthyAgentID || agent.agentTypeID == Constants.healthyUnboundAgentID || agent.agentTypeID == Constants.priorityHealthyAgentID));

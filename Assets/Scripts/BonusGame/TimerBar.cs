@@ -11,13 +11,11 @@ public class TimerBar : MonoBehaviour
     public Image fill;
     public bool isHueCyclingOnce;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentValue = maxValue;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager2.instance.isGameActive)

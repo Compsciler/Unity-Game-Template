@@ -21,7 +21,6 @@ public class GenerateWalls : MonoBehaviour
 
     public GameObject tutorialWalls;
 
-    // Start is called before the first frame update
     void Start()
     {
         switch (gameObject.GetComponent<SpawnPeople>().spawnPosListIndex)
@@ -52,12 +51,6 @@ public class GenerateWalls : MonoBehaviour
                 tileTypeGroups[i * 2].SetActive(false);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void BeginGeneration()

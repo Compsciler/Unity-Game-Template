@@ -33,16 +33,9 @@ public class GameManager2 : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         SceneManager.sceneUnloaded += OnSceneUnloaded;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ValidateLineSelection(int lineIndex)

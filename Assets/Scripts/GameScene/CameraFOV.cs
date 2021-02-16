@@ -18,7 +18,6 @@ public class CameraFOV : MonoBehaviour
     private float defaultAspectRatio = 16f / 9f;
     private float aspectRatio;
 
-    // Start is called before the first frame update
     IEnumerator Start()
     {
         mainCamera = GetComponent<Camera>();
@@ -32,12 +31,6 @@ public class CameraFOV : MonoBehaviour
             ScaleFOV();
             Debug.Log("Scaled FOV");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void ScaleFOV()

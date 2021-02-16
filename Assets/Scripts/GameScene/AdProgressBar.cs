@@ -10,13 +10,6 @@ public class AdProgressBar : MonoBehaviour
     public bool isFillReversed;
     public Image fill;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         progressTimer += Time.deltaTime;

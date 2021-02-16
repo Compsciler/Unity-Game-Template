@@ -24,7 +24,6 @@ public class AdManager2 : MonoBehaviour, IUnityAdsListener
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         if (!isInitialized)
@@ -40,12 +39,6 @@ public class AdManager2 : MonoBehaviour, IUnityAdsListener
                 Advertisement.Initialize(Constants.androidGameId, isTestMode);  // Android SPECIFIC
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator<float> ShowAd()

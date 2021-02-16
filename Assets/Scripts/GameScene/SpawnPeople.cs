@@ -67,7 +67,6 @@ public class SpawnPeople : MonoBehaviour
     public float spawnSoundVolume;
     public bool isFirstSpawnSoundDisabled;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (isUsingSemiQuickWaves)
@@ -89,7 +88,6 @@ public class SpawnPeople : MonoBehaviour
         spawnPosList = (Vector3[])spawnPosLists[spawnPosListIndex].Clone();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timer < 0)
