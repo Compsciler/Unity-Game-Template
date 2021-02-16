@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 // I hope this works
 #if UNITY_IOS
 using UnityEngine.iOS;
@@ -11,6 +9,8 @@ public class RateGame : MonoBehaviour
     public GameObject rateButton;
     public GameObject creditsButton;
 
+    internal static bool isReadyToRequestStoreReview = false;
+
     void Start()
     {
         if (!Constants.isMobilePlatform)
@@ -20,12 +20,12 @@ public class RateGame : MonoBehaviour
             float yPos = creditsButton.GetComponent<RectTransform>().anchoredPosition.y;
             creditsButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, yPos);
         }
-        else if (GameManager.isReadyToRequestStoreReview)
+        else if (isReadyToRequestStoreReview)
         {
 #if UNITY_IOS
             Device.RequestStoreReview();
 #endif
-            GameManager.isReadyToRequestStoreReview = false;
+            isReadyToRequestStoreReview = false;
             PlayerPrefs.SetInt("StoreReviewRequestTotal", 1);
             Debug.Log("Requeseted store review!");
         }

@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using MEC;
-using System.Linq;
 using UnityEngine.SceneManagement;
 using System;
-using Unity.UIWidgets.material;
 using GreatArcStudios;
 using TMPro;
 using UnityEngine.UI;
@@ -30,7 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject adMenu;
     public GameObject peopleGO;
     public bool isResettingDelayedSymptoms;
-    internal static bool isReadyToRequestStoreReview = false;
+    // internal static bool isReadyToRequestStoreReview = false;
 
     private GenerateWalls generateWallsScript;
     private SpawnPeople spawnPeopleScript;
@@ -143,7 +140,7 @@ public class GameManager : MonoBehaviour
 
             if (PlayerPrefs.GetInt("StoreReviewRequestTotal", 0) == 0)
             {
-                isReadyToRequestStoreReview = true;
+                RateGame.isReadyToRequestStoreReview = true;
             }
             yield return Timing.WaitForOneFrame;
         }

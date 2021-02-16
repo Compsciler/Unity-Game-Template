@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.UIWidgets.foundation;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpawnPeople : MonoBehaviour
 {

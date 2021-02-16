@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 // Source: https://answers.unity.com/questions/1658534/camera-fov-and-distance-based-on-mobile-screen-siz.html

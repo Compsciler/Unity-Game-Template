@@ -1,17 +1,7 @@
-﻿// using NUnit.Framework;
-using System.Collections;
-using System.Collections.Generic;
-// using System.Numerics;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using MEC;
-using System.Threading;
-using System.IO;
-using UnityEditor;
-// using System;
-// using NUnit.Framework.Internal;
-// using NUnit.Framework;
-// using NUnit.Framework.Internal;
 
 public class PersonController : MonoBehaviour
 {
