@@ -3,7 +3,7 @@ using TMPro;
 
 public class TestingZone : MonoBehaviour
 {
-    public TMP_InputField inputFieldComponent;
+    [SerializeField] TMP_InputField inputFieldComponent;
 
     void Update()
     {

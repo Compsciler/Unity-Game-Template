@@ -6,8 +6,8 @@ using UnityEngine.iOS;
 
 public class RateGame : MonoBehaviour
 {
-    public GameObject rateButton;
-    public GameObject creditsButton;
+    [SerializeField] GameObject rateButton;
+    [SerializeField] GameObject creditsButton;
 
     internal static bool isReadyToRequestStoreReview = false;
 

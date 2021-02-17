@@ -16,7 +16,7 @@ public class SpawnPeople : MonoBehaviour
     private Vector3[] spawnPosList;
     public Transform peopleGO_Transform;
 
-    [Space(10)]
+    [Space(15)]
     public int infectedWaveInterval = 5;
     public float startDelay = 0f;
     public float startRepeatRate = 25f;
@@ -25,21 +25,21 @@ public class SpawnPeople : MonoBehaviour
     public float minimumRepeatRate = 5f;
     // This would produce 0s, 25x4, 23x5, 21x5, 19x5, ... , 9x5, 7x5, 5x5, 5x5...
 
-    [Space(10)]
+    [Space(15)]
     public bool areWavesRandom = false;
     public int infectedWavesPerGroup = 2;
     public int randomWaveGroupSize = 10;
     private List<int> randomInfectedWaves = new List<int>();
 
-    [Space(10)]
+    [Space(15)]
     public bool areSpawningMultiple = false;
     public int[,] multipleSpawnWaves = new int[2, 2] {{3, 0}, {2, 1}};
     private int multipleSpawnWaveIndex = 0;
     
-    [Space(10)]
+    [Space(15)]
     public int[] multipleRandomSpawnWaves = {2, 1, 1, 1, 2, 1, 1, 1};  // Changed from {4, 3, 2, 1}  // Maximum 1 infected person per wave
 
-    [Space(10)]
+    [Space(15)]
     public int[,] tutorialSpawnWaves = new int[2, 2] {{0, 1}, {1, 0}};
     private int tutorialSpawnWaveIndex = 0;
     private bool isFinishedSpawning = false;
@@ -50,12 +50,12 @@ public class SpawnPeople : MonoBehaviour
     private int wave = 0;
     private int peopleTotal = 0;
 
-    [Space(10)]
+    [Space(15)]
     public bool isUsingExceptionWaves = false;  // Used when not random and non spawning multiple
     public List<int> exceptionSpawnWaves = new List<int>(){2, 7};
     public bool isUsingSemiQuickWaves = false;
 
-    [Space(10)]
+    [Space(15)]
     public TMP_Text waveText;
     public TMP_Text gameOverScoreText;
     public TMP_Text unlockedModeText;

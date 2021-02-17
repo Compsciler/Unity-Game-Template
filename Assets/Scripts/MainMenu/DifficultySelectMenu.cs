@@ -8,16 +8,16 @@ using TMPro;
 
 public class DifficultySelectMenu : MonoBehaviour
 {
-    public GameObject[] difficultyButtons;
-    public GameObject descriptionTextsHolder;
+    [SerializeField] GameObject[] difficultyButtons;
+    [SerializeField] GameObject descriptionTextsHolder;
     private GameObject[] descriptionTexts;
 
-    public AudioClip playButtonSound;
-    public GameObject fadingMask;
-    public float fadeTime;
-    public GameObject[] enableAfterFading;
+    [SerializeField] AudioClip playButtonSound;
+    [SerializeField] GameObject fadingMask;
+    [SerializeField] float fadeTime;
+    [SerializeField] GameObject[] enableAfterFading;
 
-    public GameObject[] enableOnFirstTimePlaying;
+    [SerializeField] GameObject[] enableOnFirstTimePlaying;
 
     // https://stackoverflow.com/questions/5849548/is-this-array-initialization-incorrect
     /*

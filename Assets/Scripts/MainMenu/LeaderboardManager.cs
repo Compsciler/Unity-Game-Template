@@ -39,13 +39,13 @@ public class LeaderboardManager : MonoBehaviour
 	internal static bool isPlayingAsGuest = false;
 
 	private HighScore[][] allOnlineHighScores;  // Change to 2D array to hold a struct for each game mode
-	public GameObject[] leaderboards;
-	public TMP_Text titleText;
-	public TMP_Text messageText;
-	public GameObject scrollView;
-	public Button uploadScoresButtonComponent;
-	public TMP_Text myUsernameText;
-	public TMP_Text myLocalScoreText;
+	[SerializeField] GameObject[] leaderboards;
+	[SerializeField] TMP_Text titleText;
+	[SerializeField] TMP_Text messageText;
+	[SerializeField] GameObject scrollView;
+	[SerializeField] Button uploadScoresButtonComponent;
+	[SerializeField] TMP_Text myUsernameText;
+	[SerializeField] TMP_Text myLocalScoreText;
 
 	private int maxScores = 100;
 	private int finishedLeaderboardUpdates = 0;

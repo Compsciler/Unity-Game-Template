@@ -2,7 +2,7 @@
 
 public class ButtonClickSound : MonoBehaviour
 {
-    public AudioClip[] clickSounds;
+    [SerializeField] AudioClip[] clickSounds;
 
     public void PlaySound(int soundNum)
     {

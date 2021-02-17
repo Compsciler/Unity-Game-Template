@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class BeforeMainMenuLoaded : MonoBehaviour
 {
-    public GameObject mainMenu;
+    [SerializeField] GameObject mainMenu;
 
     internal bool isReadyToLoadMainMenu = false;
-    public GameObject usernameCreationMenu;
+    [SerializeField] GameObject usernameCreationMenu;
 
     internal static bool isFirstTimeLoadingSinceAppOpened = true;
 

@@ -7,12 +7,12 @@ public class AudioManager : MonoBehaviour
     internal AudioSource SFX_Source;
     internal AudioSource musicSource;
 
-    public GameObject SFX_MuteButton;
-    public GameObject musicMuteButton;
-    public Sprite SFX_UnmutedSprite;
-    public Sprite SFX_MutedSprite;
-    public Sprite musicUnmutedSprite;
-    public Sprite musicMutedSprite;
+    [SerializeField] GameObject SFX_MuteButton;
+    [SerializeField] GameObject musicMuteButton;
+    [SerializeField] Sprite SFX_UnmutedSprite;
+    [SerializeField] Sprite SFX_MutedSprite;
+    [SerializeField] Sprite musicUnmutedSprite;
+    [SerializeField] Sprite musicMutedSprite;
 
     // private bool isSFX_Muted;
     // private bool isMusicPaused;

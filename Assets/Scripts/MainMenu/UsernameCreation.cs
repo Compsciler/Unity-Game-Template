@@ -12,9 +12,9 @@ public class UsernameCreation : MonoBehaviour
 
     const string webURL = "http://dreamlo.com/lb/";
 
-    public GameObject mainMenu;
-    public TMP_InputField inputField;
-    public TMP_Text errorText;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] TMP_InputField inputField;
+    [SerializeField] TMP_Text errorText;
     private BeforeMainMenuLoaded beforeMainMenuLoadedScript;
 
     private string inputUsername;
@@ -27,7 +27,7 @@ public class UsernameCreation : MonoBehaviour
     private int maxLength = 20;
     private bool[] reqMetArr = {true, false, false};
 
-    public bool isCheckingIfAllClear;
+    [SerializeField] internal bool isCheckingIfAllClear;
     private bool isAllClear = true;
     private IEnumerator checkIfAllClearIEnumerator;
     private bool checkIfAllClearFinished = false;

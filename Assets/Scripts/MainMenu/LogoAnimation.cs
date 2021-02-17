@@ -7,27 +7,27 @@ using System;
 
 public class LogoAnimation : MonoBehaviour
 {
-    public GameObject svgImageGO;
+    [SerializeField] GameObject svgImageGO;
     private Unity.VectorGraphics.SVGImage svgImage;
-    public bool isShowingLogoScreen;
+    [SerializeField] bool isShowingLogoScreen;
     private bool isLogoScreenSpedUp;
-    public float fadeInTime;
-    public float fastFadeInTime;
-    public float startImageAdditionalDelay;
-    public float individualImageTime;
-    public bool isDisablingBetweenImages;
-    public float disabledBetweenImagesTime;
-    public float endDelay;
-    public bool isDisplayingTextOnLastImage;
-    public Sprite[] logoImages;
-    public TMP_Text nameText;
+    [SerializeField] float fadeInTime;
+    [SerializeField] float fastFadeInTime;
+    [SerializeField] float startImageAdditionalDelay;
+    [SerializeField] float individualImageTime;
+    [SerializeField] bool isDisablingBetweenImages;
+    [SerializeField] float disabledBetweenImagesTime;
+    [SerializeField] float endDelay;
+    [SerializeField] bool isDisplayingTextOnLastImage;
+    [SerializeField] Sprite[] logoImages;
+    [SerializeField] TMP_Text nameText;
 
-    public GameObject logoSpeedButton;
-    public Sprite logoScreenSpedUpSprite;
-    public Sprite logoScreenNormalSpeedSprite;
-    public int defaultSpeed = 1;
+    [SerializeField] GameObject logoSpeedButton;
+    [SerializeField] Sprite logoScreenSpedUpSprite;
+    [SerializeField] Sprite logoScreenNormalSpeedSprite;
+    [SerializeField] int defaultSpeed = 1;
 
-    public GameObject logoScreen;
+    [SerializeField] GameObject logoScreen;
 
     private BeforeMainMenuLoaded beforeMainMenuLoadedScript;
 

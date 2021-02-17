@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public GameObject[] titleLetters;
+    [SerializeField] GameObject[] titleLetters;
     private Vector3[] titleLetterStartPoses;
     private Vector3 lowercaseT_EndPos;
     private Vector3 lowercaseO_EndPos;
     private Vector3 lowercaseS_EndPos;
 
-    public GameObject scrollbarText;
-    public GameObject dateDropdown;
-    public GameObject yearText;
+    [SerializeField] GameObject scrollbarText;
+    [SerializeField] GameObject dateDropdown;
+    [SerializeField] GameObject yearText;
 
     void Start()
     {

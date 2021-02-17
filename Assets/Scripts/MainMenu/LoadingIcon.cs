@@ -2,8 +2,8 @@
 
 public class LoadingIcon : MonoBehaviour
 {
-    public float rotationSpeed;
-    public bool isRandomDirection;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] bool isRandomDirection;
 
     void Start()
     {

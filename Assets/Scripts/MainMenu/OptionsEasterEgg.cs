@@ -16,39 +16,33 @@ public class OptionsEasterEgg : MonoBehaviour
     private bool isShowingEaster = false;
     // private bool isShowingEgg = false;
 
-    private Toggle toggleComponent;
-    private Scrollbar scrollbarComponent;
-    private Slider sliderComponent;
-    private TMP_InputField inputFieldComponent;
-    private TMP_Text yearTextComponent;
-    private TMP_Text backButtonTextComponent;
-
+    [Header("Easter Egg Puzzle Components")]
+    [SerializeField] Toggle toggleComponent;
+    [SerializeField] Scrollbar scrollbarComponent;
+    [SerializeField] Slider sliderComponent;
+    [SerializeField] TMP_InputField inputFieldComponent;
+    [SerializeField] TMP_Text yearTextComponent;
+    [SerializeField] TMP_Text backButtonTextComponent;
     private string defaultInputText;
-    public float backButtonHoldTime = 1f;
+
+    [Space(15)]
+    [SerializeField] float backButtonHoldTime = 1f;
     private float backButtonHoldTimer;
 
-    public GameObject[] enableOnEasterEgg;
-    public GameObject[] disableOnEasterEgg;
+    [SerializeField] GameObject[] enableOnEasterEgg;
+    [SerializeField] GameObject[] disableOnEasterEgg;
 
     private TouchScreenKeyboard keyboard;
 
     private string linkUrl = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public";
 
-    public AudioClip playButtonSound;
-    public GameObject fadingMask;
-    public float fadeTime;
-    public GameObject[] enableAfterFading;
+    [SerializeField] AudioClip playButtonSound;
+    [SerializeField] GameObject fadingMask;
+    [SerializeField] float fadeTime;
+    [SerializeField] GameObject[] enableAfterFading;
 
     void Start()
     {
-        Transform optionsMenuTransform = GameObject.Find("Options Menu").transform;
-        toggleComponent = optionsMenuTransform.Find("Toggle").gameObject.GetComponent<Toggle>();
-        scrollbarComponent = optionsMenuTransform.Find("Scrollbar").gameObject.GetComponent<Scrollbar>();
-        sliderComponent = optionsMenuTransform.Find("Slider").gameObject.GetComponent<Slider>();
-        inputFieldComponent = optionsMenuTransform.Find("InputField (TMP)").gameObject.GetComponent<TMP_InputField>();
-        yearTextComponent = optionsMenuTransform.Find("Year Text").gameObject.GetComponent<TMP_Text>();
-        backButtonTextComponent = optionsMenuTransform.Find("Back Button").GetComponentInChildren<TMP_Text>();
-
         defaultInputText = inputFieldComponent.text;  // Should be 36 spaces followed by "an"
         backButtonHoldTimer = backButtonHoldTime;
     }
