@@ -29,14 +29,13 @@ public class LogoAnimation : MonoBehaviour
 
     [SerializeField] GameObject logoScreen;
 
-    private BeforeMainMenuLoaded beforeMainMenuLoadedScript;
+    [SerializeField] BeforeMainMenuLoaded beforeMainMenuLoadedScript;
 
     // Current animation time: 1.2 + 7 * (0.35 + 0.05) + 2
 
     void Start()
     {
         svgImage = svgImageGO.GetComponent<Unity.VectorGraphics.SVGImage>();
-        beforeMainMenuLoadedScript = GameObject.Find("Background").GetComponent<BeforeMainMenuLoaded>();
 
         Timing.RunCoroutine(ImmediatelyPauseMusic());
         if (isShowingLogoScreen && BeforeMainMenuLoaded.isFirstTimeLoadingSinceAppOpened)

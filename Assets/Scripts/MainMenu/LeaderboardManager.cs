@@ -39,7 +39,10 @@ public class LeaderboardManager : MonoBehaviour
 	internal static bool isPlayingAsGuest = false;
 
 	private HighScore[][] allOnlineHighScores;  // Change to 2D array to hold a struct for each game mode
-	[SerializeField] GameObject[] leaderboards;
+
+	[SerializeField] GameObject leaderboardsHolder;
+	private GameObject[] leaderboards;
+
 	[SerializeField] TMP_Text titleText;
 	[SerializeField] TMP_Text messageText;
 	[SerializeField] GameObject scrollView;
@@ -62,6 +65,8 @@ public class LeaderboardManager : MonoBehaviour
 		{
 			instance = this;
 		}
+
+		leaderboards = leaderboardsHolder.GetChildren();
 	}
 
     void Start()
@@ -271,7 +276,7 @@ public class LeaderboardManager : MonoBehaviour
 		for (int i = 0; i < publicCodes.Length; i++)
         {
 			TMP_Text mainText = leaderboards[i].GetComponent<TMP_Text>();
-			TMP_Text scoreText = mainText.transform.Find("Score Text").GetComponent<TMP_Text>();
+			TMP_Text scoreText = mainText.transform.GetChild(0).GetComponent<TMP_Text>();  // Score Text should be Child 0
 			mainText.text = "";
 			scoreText.text = "";
 			for (int j = 0; j < allOnlineHighScores[i].Length; j++)

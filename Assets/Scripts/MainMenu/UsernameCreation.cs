@@ -15,7 +15,7 @@ public class UsernameCreation : MonoBehaviour
     [SerializeField] GameObject mainMenu;
     [SerializeField] TMP_InputField inputField;
     [SerializeField] TMP_Text errorText;
-    private BeforeMainMenuLoaded beforeMainMenuLoadedScript;
+    [SerializeField] BeforeMainMenuLoaded beforeMainMenuLoadedScript;
 
     private string inputUsername;
     private bool isDoneWritingUsername = false;
@@ -31,11 +31,6 @@ public class UsernameCreation : MonoBehaviour
     private bool isAllClear = true;
     private IEnumerator checkIfAllClearIEnumerator;
     private bool checkIfAllClearFinished = false;
-
-    void Start()
-    {
-        beforeMainMenuLoadedScript = GameObject.Find("Background").GetComponent<BeforeMainMenuLoaded>();
-    }
 
     public IEnumerator CreateUsername()  // Usernames may only contain [A-Z][a-z][0-9]_ and must be unique by lowercase
     {

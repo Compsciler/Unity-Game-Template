@@ -112,7 +112,7 @@ public class PersonController : MonoBehaviour
         isRecentlyInfected = startsInfected;
 
         infectionCylinderScript = GetComponentInChildren<InfectionCylinder>(true);
-        hospitalTileScript = GameObject.Find("Hospital").GetComponent<HospitalTile>();
+        hospitalTileScript = FindObjectOfType<HospitalTile>();
 
         GeneratePathModeDestinations(true);
         tempAgent = GameObject.Find("Temp Pathing Agent").GetComponent<NavMeshAgent>();

@@ -9,7 +9,17 @@ using TMPro;
 public class DifficultySelectMenu : MonoBehaviour
 {
     [SerializeField] GameObject[] difficultyButtons;
+
+    [SerializeField] GameObject pressedButtonImagesHolder;
+    [SerializeField] GameObject scoreTextsHolder;
+    [SerializeField] GameObject lockIconsHolder;
+    [SerializeField] GameObject startButtonsHolder;
     [SerializeField] GameObject descriptionTextsHolder;
+
+    private GameObject[] pressedButtonImages;
+    private GameObject[] scoreTexts;
+    private GameObject[] lockIcons;
+    private GameObject[] startButtons;
     private GameObject[] descriptionTexts;
 
     [SerializeField] AudioClip playButtonSound;
@@ -46,16 +56,16 @@ public class DifficultySelectMenu : MonoBehaviour
         new int[,] {{2, 30}, {4, 20}, {6, 35}}  // Changed from {2, 40} to {2, 20}
     };
 
+    void Awake()
+    {
+        SetDifficultyButtonRelatedUI();
+    }
+
     void Start()
     {
-        descriptionTexts = descriptionTextsHolder.GetChildren();
-
         if (PlayerPrefs.GetInt("IsFirstTimePlaying", 1) == 1)
         {
-            foreach (GameObject go in enableOnFirstTimePlaying)
-            {
-                go.SetActive(true);
-            }
+            SetEachActive(enableOnFirstTimePlaying, true);
             PlayerPrefs.SetInt("IsFirstTimePlaying", 0);
         }
     }
@@ -79,10 +89,7 @@ public class DifficultySelectMenu : MonoBehaviour
         CoroutineHandle fadeBackgroundCoroutine = Timing.RunCoroutine(FadeBackground());
         AudioManager.instance.SFX_Source.PlayOneShot(playButtonSound);
         yield return Timing.WaitUntilDone(fadeBackgroundCoroutine);
-        foreach (GameObject go in enableAfterFading)
-        {
-            go.SetActive(true);
-        }
+        SetEachActive(enableAfterFading, true);
         SceneManager.LoadSceneAsync(Constants.gameSceneBuildIndex);
     }
 
@@ -100,23 +107,16 @@ public class DifficultySelectMenu : MonoBehaviour
 
     public void ResetMenuPresses()
     {
-        foreach (GameObject button in difficultyButtons)
+        SetEachActive(pressedButtonImages, false);
+        try
         {
-            // button.transform.Find("Description Text").gameObject.SetActive(false);
-            button.transform.Find("Pressed Button Image").gameObject.SetActive(false);
-            try
-            {
-                button.transform.Find("Start Button").gameObject.SetActive(false);
-            }
-            catch (NullReferenceException)
-            {
-                
-            }
+            SetEachActive(startButtons, false);
         }
-        foreach (GameObject descriptionText in descriptionTexts)
+        catch (NullReferenceException)
         {
-            descriptionText.SetActive(false);
+
         }
+        SetEachActive(descriptionTexts, false);
     }
 
     private void SetUpUnlocksAndScores()
@@ -139,10 +139,10 @@ public class DifficultySelectMenu : MonoBehaviour
             }
             if (currentUnlockReqsMet || PlayerPrefs.GetInt("AreAllGameModesUnlocked", 0) == 1)
             {
-                difficultyButton.transform.Find("Lock Icon").gameObject.SetActive(false);
+                lockIcons[i].SetActive(false);
                 try
                 {
-                    difficultyButton.transform.Find("Start Button").GetComponent<Button>().interactable = true;
+                    startButtons[i].GetComponent<Button>().interactable = true;
                 }
                 catch (NullReferenceException)
                 {
@@ -153,11 +153,28 @@ public class DifficultySelectMenu : MonoBehaviour
                     int highScore = highScores[i - 1];
                     if (highScore > 0)
                     {
-                        TMP_Text scoreText = difficultyButton.transform.Find("Score Text").GetComponent<TMP_Text>();
+                        TMP_Text scoreText = scoreTexts[i].GetComponent<TMP_Text>();
                         scoreText.text = highScore.ToString();
                     }
                 }
             }
+        }
+    }
+
+    private void SetDifficultyButtonRelatedUI()
+    {
+        pressedButtonImages = pressedButtonImagesHolder.GetChildren();
+        scoreTexts = scoreTextsHolder.GetChildren();
+        lockIcons = lockIconsHolder.GetChildren();
+        startButtons = startButtonsHolder.GetChildren();
+        descriptionTexts = descriptionTextsHolder.GetChildren();
+    }
+
+    private void SetEachActive(GameObject[] gameObjects, bool value)
+    {
+        foreach (GameObject go in gameObjects)
+        {
+            go.SetActive(value);
         }
     }
 }
