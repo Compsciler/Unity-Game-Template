@@ -2205,7 +2205,7 @@ RectTransform:
   m_Children:
   - {fileID: 1051217322}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -3250,10 +3250,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Breakneck Mode:\n\u2022 40 Walls\n\u2022 25-second waves to start, decreases
-    by 2 seconds every even wave\n\u2022 3 healthy people spawn on odd waves, 1 healthy
-    and 1 infected person spawn on even waves\n[Score <color=#00ffff>25</color> in
-    Quick Mode to unlock]"
+  m_text: 'Level 3B
+
+
+    [Score <color=#00ffff>25</color> in Level 2B to unlock]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4597,7 +4597,7 @@ GameObject:
   - component: {fileID: 266025496}
   - component: {fileID: 266025495}
   m_Layer: 5
-  m_Name: Social Distancing Info Button
+  m_Name: Info Link Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5689,8 +5689,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Difficult Mode:\n\u2022 35 Walls\n\u2022 Normal wave progression\n\u2022
-    Hospital open to all\n[Score <color=\"green\">20</color> in Normal Mode to unlock]"
+  m_text: 'Level 2A
+
+
+    [Score <color="green">20</color> in Level 1 to unlock]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6528,9 +6530,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Quick Mode:\n\u2022 40 Walls\n\u2022 15-second waves to start, decreases
-    by 1 second every fifth wave\n\u2022 Normal infected waves\n[Score <color=\"green\">20</color>
-    in Normal Mode to unlock]"
+  m_text: 'Level 2B
+
+
+    [Score <color="green">20</color> in Level 1 to unlock]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7796,7 +7799,7 @@ RectTransform:
   m_Children:
   - {fileID: 462757000}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -9956,9 +9959,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oblique Mode:\n\u2022 40 Walls\n\u2022 Normal wave progression\n\u2022
-    People now spawn in the corners\n[Score <color=\"green\">20</color> in Normal
-    Mode to unlock]"
+  m_text: 'Level 2C
+
+
+    [Score <color="green">20</color> in Level 1 to unlock]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11375,7 +11379,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2133996082
+    rgba: 2150773298
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.5}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -12142,9 +12146,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Holesome Mode:\n\u2022 35 Walls\n\u2022 Normal wave progression\n\u2022
-    4 tiles removed from the cement ground\n[Score <color=\"blue\">25</color> in
-    Oblique Mode to unlock]"
+  m_text: 'Level 3C
+
+
+    [Score <color="blue">25</color> in Level 2C to unlock]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12276,7 +12281,7 @@ RectTransform:
   m_Children:
   - {fileID: 1304264656}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -15839,7 +15844,7 @@ RectTransform:
   m_Children:
   - {fileID: 703712166}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -16232,7 +16237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: version 1.0.2
+  m_text: version x.x.x
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 145bbd9f43cda6b47a883bded8221965, type: 2}
   m_sharedMaterial: {fileID: 21914024979671456, guid: 145bbd9f43cda6b47a883bded8221965,
@@ -17218,7 +17223,7 @@ RectTransform:
   m_Children:
   - {fileID: 391467218}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -17822,7 +17827,7 @@ RectTransform:
   m_Children:
   - {fileID: 113387578}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -19532,7 +19537,7 @@ RectTransform:
   m_Children:
   - {fileID: 370688686}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -19700,7 +19705,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1171589787}
   - {fileID: 1853886715}
   - {fileID: 1102020086}
   - {fileID: 461923981}
@@ -19709,6 +19713,7 @@ RectTransform:
   - {fileID: 778989172}
   - {fileID: 123862419}
   - {fileID: 1459018381}
+  - {fileID: 1171589787}
   m_Father: {fileID: 2029193977}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20999,7 +21004,7 @@ GameObject:
   - component: {fileID: 1350817512}
   - component: {fileID: 1350817511}
   m_Layer: 5
-  m_Name: Objective Text
+  m_Name: Subtitle (Roboto)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21043,7 +21048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Objective: Keep everyone healthy!'
+  m_text: Subtitle (Roboto)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 21573621589201580, guid: 36d6004f008bd91459b813bf1b27d209,
@@ -21113,10 +21118,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1350817511}
-    characterCount: 33
+    characterCount: 17
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -21582,9 +21587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Normal Mode:\n\u2022 40 Walls\n\u2022 20-second waves to start, decreases
-    by 1 second every fifth wave (to a minimum of 5-second waves)\n\u2022 Infected
-    people spawn on every fifth wave and on Waves 2 and 7"
+  m_text: Level 1 (Game Mode 0)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 21573621589201580, guid: 36d6004f008bd91459b813bf1b27d209,
@@ -22598,7 +22601,7 @@ RectTransform:
   m_Children:
   - {fileID: 135499347}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -24437,7 +24440,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Social distancing info
+  m_text: Info Link
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0dc3509978f3b2b498db49cf18d6f6df, type: 2}
   m_sharedMaterial: {fileID: 21630072650486322, guid: 0dc3509978f3b2b498db49cf18d6f6df,
@@ -24466,8 +24469,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -24507,10 +24510,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1569052007}
-    characterCount: 22
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -29068,7 +29071,7 @@ RectTransform:
   m_Children:
   - {fileID: 182624576}
   m_Father: {fileID: 1238311814}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -29511,7 +29514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Six Feet Apart
+  m_text: Game Title
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 145bbd9f43cda6b47a883bded8221965, type: 2}
   m_sharedMaterial: {fileID: 21914024979671456, guid: 145bbd9f43cda6b47a883bded8221965,
@@ -29581,10 +29584,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1877158694}
-    characterCount: 14
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -30409,11 +30412,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ultimate Mode:\n\u2022 35 walls\n\u2022 25-second waves to start, decreases
-    by 2 seconds every fourth wave\n\u2022 1 infected and 1 healthy person spawns
-    on every fourth wave\n\u2022 People spawn in 8 unique locations!\n[Score <color=\"red\">30</color>
-    in Extreme Mode, <color=\"orange\">20</color> in Breakneck Mode, and <color=\"purple\">35</color>
-    in Holesome Mode to unlock]"
+  m_text: 'Level 4
+
+
+    [Score <color="red">30</color> in Level 3A, <color="orange">20</color>
+    in Level 3B, and <color="purple">35</color> in Level 3C to unlock]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30525,7 +30528,7 @@ GameObject:
   - component: {fileID: 1939011625}
   - component: {fileID: 1939011624}
   m_Layer: 5
-  m_Name: Subtitle
+  m_Name: Subtitle (Zekton)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30569,7 +30572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (iOS Build)
+  m_text: Subtitle (Zekton)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 145bbd9f43cda6b47a883bded8221965, type: 2}
   m_sharedMaterial: {fileID: 21914024979671456, guid: 145bbd9f43cda6b47a883bded8221965,
@@ -31539,19 +31542,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>All revenue will be donated to COVID-19 relief charities!</b>
+  m_text: '<b>Optional bold text</b>
 
-    Game
-    by Roger Wang
+    Game by Roger Wang
 
-    Main menu music: Universe Music by Marcin Klosowski
+    Main menu music:
+    Universe Music by Marcin Klosowski
 
-    In-game
-    music: Desert Night by Dalv Olan
+    In-game music: Desert Night by Dalv Olan
 
-    95% of fancy sprites, models, materials,
-    shaders, textures, animations, sounds, and particle effects from Unity Asset
-    Store
+    95%
+    of fancy sprites, models, materials, shaders, textures, animations, sounds, and
+    particle effects from Unity Asset Store
 
     SVG sprites by me:'
   m_isRightToLeft: 0
@@ -31622,10 +31624,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2028998117}
-    characterCount: 312
+    characterCount: 273
     spriteCount: 0
-    spaceCount: 48
-    wordCount: 49
+    spaceCount: 42
+    wordCount: 43
     linkCount: 0
     lineCount: 7
     pageCount: 1
@@ -32279,10 +32281,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Extreme Mode:\n\u2022 35 Walls\n\u2022 Randomized waves (2 infected waves
-    every 10 waves) with normal wave time intervals\n\u2022 Hospital open to all\n\u2022
-    Infected don't show symptoms until 15 seconds after being infected\n[Score <color=\"yellow\">25</color>
-    in Difficult Mode to unlock]\n"
+  m_text: 'Level 3A
+
+
+    [Score <color="yellow">25</color> in Level 2A to unlock]
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

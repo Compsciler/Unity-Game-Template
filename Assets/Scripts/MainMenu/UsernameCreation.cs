@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 
 public class UsernameCreation : MonoBehaviour
 {
+    //{Dreamlo username leaderboard private and public code pair}
     const string privateCode = "gj0QR61YOUyLiGs_ZVIdFw8m_l4jEEW0SytEJWpGyD0g";
     const string publicCode = "5f2ba017eb371809c4afd909";
 

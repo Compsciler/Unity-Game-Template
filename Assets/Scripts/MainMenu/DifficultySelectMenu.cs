@@ -44,6 +44,8 @@ public class DifficultySelectMenu : MonoBehaviour
     };
     */
     // EASIER
+
+    //{Game mode unlock requirements, in order by the game mode (starting from tutorial here) considered for requirements}
     internal static int[][,] gameModeUnlockReqs = new int[][,]{
         new int[,] {{}},
         new int[,] {{}},

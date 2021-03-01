@@ -7,7 +7,7 @@ public class HighScoreLogger : MonoBehaviour
     internal static HighScoreLogger instance;
     [SerializeField] internal int gameMode = -1;
 
-    internal string[] highScoreStrings = {"NormalHighScore", "DifficultHighScore", "ExtremeHighScore", "QuickHighScore", "BreakneckHighScore", "ObliqueHighScore", "HolesomeHighScore", "UltimateHighScore"};
+    internal string[] highScoreStrings = {"GM0HighScore", "GM1HighScore", "GM2HighScore", "GM3HighScore", "GM4HighScore", "GM5HighScore", "GM6HighScore", "GM7HighScore"};  //{Optional: rename}
 
     void Awake()
     {

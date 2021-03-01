@@ -34,7 +34,7 @@ public class OptionsEasterEgg : MonoBehaviour
 
     private TouchScreenKeyboard keyboard;
 
-    private string linkUrl = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public";
+    private string linkUrl = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public";  //{"Developer Mode" link}
 
     [SerializeField] AudioClip playButtonSound;
     [SerializeField] GameObject fadingMask;
