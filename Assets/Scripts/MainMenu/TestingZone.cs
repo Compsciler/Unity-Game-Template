@@ -23,8 +23,6 @@ public class TestingZone : MonoBehaviour
                     string keyValuePair = parsedStringArr[1];
                     parsedStringArr[1] = keyValuePair.Split('=')[0];
                     parsedStringArr[2] = keyValuePair.Split('=')[1];
-
-                    // Debug.Log(parsedStringArr[0] + ", " + parsedStringArr[1] + ", " + parsedStringArr[2]);
                 }
                 try
                 {
@@ -33,14 +31,15 @@ public class TestingZone : MonoBehaviour
                         case "UHS":  // Update high score
                             HighScoreLogger.instance.gameMode = int.Parse(parsedStringArr[1]);
                             HighScoreLogger.instance.UpdateHighScore(int.Parse(parsedStringArr[2]), true);
+                            Debug.Log("Game Mode " + parsedStringArr[1] + " high score updated to " + parsedStringArr[2]);
                             break;
                         case "UAGM":  // Unlock all game modes
                             HighScoreLogger.instance.UnlockAllGameModes(int.Parse(parsedStringArr[1]));
                             Debug.Log("Unlocked all game modes");
                             break;
                         case "CU":  // Change username (only for testing, doesn't modify database)
-                            Debug.Log("Username changed from " + PlayerPrefs.GetString("Username") + " to " + parsedStringArr[1]);
                             PlayerPrefs.SetString("Username", parsedStringArr[1]);
+                            Debug.Log("Username changed from " + PlayerPrefs.GetString("Username") + " to " + parsedStringArr[1]);
                             break;
                         case "DU":  // Delete username (only for testing, doesn't modify database)
                             PlayerPrefs.SetString("Username", null);

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-// Source: https://www.youtube.com/watch?v=KZuqEyxYZCc&t=616s
+// Source: https://youtu.be/KZuqEyxYZCc
 
 public class LeaderboardManager : MonoBehaviour
 {
@@ -39,7 +39,7 @@ public class LeaderboardManager : MonoBehaviour
 	internal static string username;
 	internal static bool isPlayingAsGuest = false;
 
-	private HighScore[][] allOnlineHighScores;  // Change to 2D array to hold a struct for each game mode
+	private HighScore[][] allOnlineHighScores;
 
 	[SerializeField] GameObject leaderboardsHolder;
 	private GameObject[] leaderboards;
@@ -88,7 +88,7 @@ public class LeaderboardManager : MonoBehaviour
 		}
     }
 
-    IEnumerator UploadAllHighScores()  // Doesn't update equal high scores
+    IEnumerator UploadAllHighScores()  // Does not update equal high scores
     {
 		messageText.text = "Uploading high scores to database...";
 		uploadScoresButtonComponent.interactable = false;
@@ -117,8 +117,6 @@ public class LeaderboardManager : MonoBehaviour
 			}
 			else
 			{
-				// errorText.gameObject.SetActive(true);
-				// errorText.text = "Error uploading username! Restart app and try again.";
 				StopCoroutine(UploadAllHighScores());
 			}
 		}
@@ -154,18 +152,10 @@ public class LeaderboardManager : MonoBehaviour
 		StartCoroutine(UploadAllHighScores());
     }
 
-	/*
-	public void UploadNewHighScores(int gameModeHighScore)
+	public void UploadNewHighScores(int gameMode, int gameModeHighScore, int overallHighScore)  // Unused
 	{
-		StartCoroutine(UploadGameModeHighScore(gameModeHighScore));
-		StartCoroutine(UploadOverallHighScore());
-	}
-	*/
-
-	IEnumerator UploadGameModeHighScore(int score)
-	{
-		UploadGameModeHighScore(HighScoreLogger.instance.gameMode, score);
-		yield return null;
+		StartCoroutine(UploadGameModeHighScore(gameMode, gameModeHighScore));
+		StartCoroutine(UploadOverallHighScore(overallHighScore));
 	}
 
 	IEnumerator UploadGameModeHighScore(int gameMode, int score)
@@ -178,7 +168,7 @@ public class LeaderboardManager : MonoBehaviour
 		if (string.IsNullOrEmpty(request.error))
 		{
 			finishedLeaderboardUpdates++;
-			Debug.Log("Upload Successful with " + gameModeHighScoreString);
+			// Debug.Log("Upload Successful with " + gameModeHighScoreString);
 		}
 		else
 		{
@@ -187,12 +177,6 @@ public class LeaderboardManager : MonoBehaviour
 			uploadScoresButtonComponent.interactable = true;
 			Debug.Log("Error uploading " + gameModeHighScoreString + ": " + request.error);
 		}
-	}
-
-	IEnumerator UploadOverallHighScore()
-    {
-		StartCoroutine(UploadOverallHighScore(HighScoreLogger.instance.GetOverallHighScore()));
-		yield return null;
 	}
 
 	IEnumerator UploadOverallHighScore(int score)
@@ -204,7 +188,7 @@ public class LeaderboardManager : MonoBehaviour
 		if (string.IsNullOrEmpty(request.error))
 		{
 			finishedLeaderboardUpdates++;
-			Debug.Log("Upload Successful with OverallHighScore");
+			// Debug.Log("Upload Successful with OverallHighScore");
 		}
 		else
 		{
@@ -245,16 +229,14 @@ public class LeaderboardManager : MonoBehaviour
 		{
 			messageText.text = "<color=#FF4040>Check your internet connection and re-enter the menu.</color>";
 			StopCoroutine(DownloadAllHighScores(maxScores));
-			Debug.Log("Error Downloading: " + request.error);
+			Debug.Log("Error downloading high scores: " + request.error);
 		}
 	}
 
-	/*
-	public void DownloadHighScoresStartCoroutine(int leaderboardNum, int maxScores)
+	public void DownloadHighScoresStartCoroutine(int leaderboardNum, int maxScores)  // Unused
 	{
 		StartCoroutine(DownloadHighScores(leaderboardNum, maxScores));
 	}
-	*/
 
 	void FormatHighScores(int leaderboardNum, string textStream)
 	{
@@ -267,7 +249,7 @@ public class LeaderboardManager : MonoBehaviour
 			string username = entryInfo[0];
 			int score = int.Parse(entryInfo[1]);
 			currentOnlineHighScores[i] = new HighScore(username, score);
-			Debug.Log(leaderboardNum + " | " + currentOnlineHighScores[i].username + ": " + currentOnlineHighScores[i].score);
+			// Debug.Log(leaderboardNum + " | " + currentOnlineHighScores[i].username + ": " + currentOnlineHighScores[i].score);
 		}
 		allOnlineHighScores[leaderboardNum] = currentOnlineHighScores;
 	}

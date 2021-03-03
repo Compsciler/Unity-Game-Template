@@ -51,7 +51,7 @@ public class UsernameCreation : MonoBehaviour
             reqMetArr[2] = IsLengthValid();
             if (reqMetArr[1] && reqMetArr[2])
             {
-                checkIfUsernameIsUniqueIEnumerator = CheckIfUsernameIsUnique();  // Last check
+                checkIfUsernameIsUniqueIEnumerator = CheckIfUsernameIsUnique();
                 StartCoroutine(checkIfUsernameIsUniqueIEnumerator);
                 yield return new WaitUntil(() => checkIfUsernameIsUniqueFinished);
                 if (isConnectionTimedOut || !string.IsNullOrEmpty(errorText.text))
@@ -80,9 +80,6 @@ public class UsernameCreation : MonoBehaviour
             checkIfAllClearIEnumerator = CheckIfAllClear();
             StartCoroutine(checkIfAllClearIEnumerator);
         }
-
-        // mainMenu.SetActive(true);
-        // mainMenu.GetComponent<BeforeMainMenuLoaded>().isReadyToLoadMainMenu = true;
     }
 
     IEnumerator UploadAndSetNewUsername()
@@ -94,17 +91,9 @@ public class UsernameCreation : MonoBehaviour
         {
             PlayerPrefs.SetString("Username", inputUsername);
             LeaderboardManager.username = inputUsername;
-            Debug.Log("Upload username successful!");
             if (isCheckingIfAllClear)
             {
                 yield return new WaitUntil(() => checkIfAllClearFinished);
-                /*
-                while (!checkIfAllClearFinished)
-                {
-                    yield return null;
-                }
-                */
-                // yield return new WaitForSeconds(5f);
             }
             beforeMainMenuLoadedScript.isReadyToLoadMainMenu = true;
             gameObject.SetActive(false);
@@ -116,7 +105,7 @@ public class UsernameCreation : MonoBehaviour
         }
     }
 
-    IEnumerator ConnectionTimeout(IEnumerator runningIEnumerator)
+    IEnumerator ConnectionTimeout(IEnumerator runningIEnumerator)  // Unused
     {
         yield return new WaitForSeconds(Constants.connectionTimeoutTime);
         StopCoroutine(runningIEnumerator);

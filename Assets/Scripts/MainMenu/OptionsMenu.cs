@@ -34,7 +34,6 @@ public class OptionsMenu : MonoBehaviour
         foreach (GameObject letter in transparentLetters)
         {
             Color textColor = letter.GetComponent<TMP_Text>().color;
-            // textColor = new Color(textColor.r, textColor.g, textColor.b, Mathf.Lerp(1, 0, scrollbarComponent.value));
             letter.GetComponent<TMP_Text>().color = new Color(textColor.r, textColor.g, textColor.b, Mathf.Lerp(1, 0, scrollbarComponent.value));
         }
         titleLetters[2].GetComponent<RectTransform>().anchoredPosition3D = Vector3.Lerp(titleLetterStartPoses[2], lowercaseT_EndPos, scrollbarComponent.value);

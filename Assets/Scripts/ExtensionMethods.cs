@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ExtensionMethods
 {
-    // https://forum.unity.com/threads/hiow-to-get-children-gameobjects-array.142617/
+    // Source: https://forum.unity.com/threads/hiow-to-get-children-gameobjects-array.142617/
     public static GameObject[] GetChildren(this GameObject go)
     {
         GameObject[] children = new GameObject[go.transform.childCount];

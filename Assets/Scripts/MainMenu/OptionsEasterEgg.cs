@@ -14,7 +14,6 @@ public class OptionsEasterEgg : MonoBehaviour
     private bool isShowingFor = false;
     private bool isShowingAn = false;
     private bool isShowingEaster = false;
-    // private bool isShowingEgg = false;
 
     [Header("Easter Egg Puzzle Components")]
     [SerializeField] Toggle toggleComponent;
@@ -31,8 +30,6 @@ public class OptionsEasterEgg : MonoBehaviour
 
     [SerializeField] GameObject[] enableOnEasterEgg;
     [SerializeField] GameObject[] disableOnEasterEgg;
-
-    private TouchScreenKeyboard keyboard;
 
     private string linkUrl = "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public";  //{"Developer Mode" link}
 
@@ -87,32 +84,20 @@ public class OptionsEasterEgg : MonoBehaviour
                 inputFieldComponent.text = defaultInputText;  // Resets input text if all deleted
             }
         }
-        /*
-        if (!TouchScreenKeyboard.visible && keyboard != null)
-        {
-            if (keyboard.done)
-            {
-                string x = keyboard.text;
-                TMP_Text t = GetComponentInChildren<TMP_Text>();
-                t.text = "Bonjour " + x;
-            }
-        }
-        */
     }
 
-    public void ShowValues()
+    public void ShowValues()  // Unused
     {
         Debug.Log("Perfect: " + isShowingPerfect);
         Debug.Log("Spot: " + isShowingSpot);
         Debug.Log("For: " + isShowingFor);
         Debug.Log("An: " + isShowingAn);
         Debug.Log("Easter: " + isShowingEaster);
-        // Debug.Log("Egg: " + isShowingEgg);
     }
 
-    public void OpenKeyboard()
+    public void OpenKeyboard()  // Unused except for in Testing Zone Menu
     {
-        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
     }
 
     public void OpenLink()

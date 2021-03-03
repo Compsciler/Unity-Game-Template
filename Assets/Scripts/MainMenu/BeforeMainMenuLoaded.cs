@@ -14,7 +14,6 @@ public class BeforeMainMenuLoaded : MonoBehaviour
     {
         if (isReadyToLoadMainMenu)
         {
-            Debug.Log("Username: " + PlayerPrefs.GetString("Username"));
             isReadyToLoadMainMenu = false;
             if (PlayerPrefs.GetString("Username", "").Equals("") && !LeaderboardManager.isPlayingAsGuest)
             {

@@ -30,32 +30,17 @@ public class DifficultySelectMenu : MonoBehaviour
     [SerializeField] GameObject[] enableOnFirstTimePlaying;
 
     // https://stackoverflow.com/questions/5849548/is-this-array-initialization-incorrect
-    /*
-    internal static int[][,] gameModeUnlockReqs = new int[][,]{
-        new int[,] {{}},
-        new int[,] {{}},
-        new int[,] {{0, 30}},
-        new int[,] {{1, 35}},
-        new int[,] {{0, 30}},
-        new int[,] {{3, 35}},
-        new int[,] {{0, 30}},
-        new int[,] {{5, 25}},  // Changed from 35
-        new int[,] {{2, 30}, {4, 20}, {6, 40}}  // Changed from {2, 40} to {2, 20}
-    };
-    */
-    // EASIER
-
     //{Game mode unlock requirements, in order by the game mode (starting from tutorial here) considered for requirements}
     internal static int[][,] gameModeUnlockReqs = new int[][,]{
         new int[,] {{}},
         new int[,] {{}},
-        new int[,] {{0, 20}},  // Changed from 25 to 20
-        new int[,] {{1, 25}},  // Changed from 30 to 25
-        new int[,] {{0, 20}},  // Changed from 25 to 20
-        new int[,] {{3, 25}},  // Changed from 30 to 25
-        new int[,] {{0, 20}},  // Changed from 25 to 20
-        new int[,] {{5, 25}},  // Changed from 30 to 25
-        new int[,] {{2, 30}, {4, 20}, {6, 35}}  // Changed from {2, 40} to {2, 20}
+        new int[,] {{0, 20}},
+        new int[,] {{1, 25}},
+        new int[,] {{0, 20}},
+        new int[,] {{3, 25}},
+        new int[,] {{0, 20}},
+        new int[,] {{5, 25}},
+        new int[,] {{2, 30}, {4, 20}, {6, 35}}
     };
 
     void Awake()
@@ -127,7 +112,7 @@ public class DifficultySelectMenu : MonoBehaviour
 
         for (int i = 0; i < gameModeUnlockReqs.Length; i++)
         {
-            GameObject difficultyButton = difficultyButtons[i];
+            // GameObject difficultyButton = difficultyButtons[i];
             int[,] currentUnlockReqs = gameModeUnlockReqs[i];
             bool currentUnlockReqsMet = true;
             for (int j = 0; j < currentUnlockReqs.Length / 2; j++)  // Foreach loop doesn't work somehow, probably because C# Length property returns total number of integers in array
@@ -150,7 +135,7 @@ public class DifficultySelectMenu : MonoBehaviour
                 {
 
                 }
-                if (i >= 1 && i < highScores.Length + 1)  // To not try to access scores of Tutorial and Custom Mode
+                if (i >= 1 && i < highScores.Length + 1)  // Does not access scores of Tutorial and Custom Mode  //{Optional: change if needed}
                 {
                     int highScore = highScores[i - 1];
                     if (highScore > 0)

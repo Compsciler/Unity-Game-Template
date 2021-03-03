@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-// I hope this works
 #if UNITY_IOS
 using UnityEngine.iOS;
 #endif
@@ -27,7 +26,7 @@ public class RateGame : MonoBehaviour
 #endif
             isReadyToRequestStoreReview = false;
             PlayerPrefs.SetInt("StoreReviewRequestTotal", 1);
-            Debug.Log("Requeseted store review!");
+            Debug.Log("Ready to request store review!");
         }
     }
 
@@ -37,4 +36,6 @@ public class RateGame : MonoBehaviour
         Device.RequestStoreReview();  // iOS SPECIFIC, will change to link to store page
 #endif
     }
+
+    //{Rate Button should open a link to game's store page}
 }

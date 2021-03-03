@@ -31,7 +31,7 @@ public class LogoAnimation : MonoBehaviour
 
     [SerializeField] BeforeMainMenuLoaded beforeMainMenuLoadedScript;
 
-    // Current animation time: 1.2 + 7 * (0.35 + 0.05) + 2
+    // Current normal-speed animation time: 1.2 + 7 * (0.35 + 0.05) + 2 = 6 seconds
 
     void Start()
     {
@@ -47,8 +47,6 @@ public class LogoAnimation : MonoBehaviour
         }
         else
         {
-            // logoScreen.SetActive(false);
-            // gameObject.SetActive(true);
             beforeMainMenuLoadedScript.isReadyToLoadMainMenu = true;
         }
         BeforeMainMenuLoaded.isFirstTimeLoadingSinceAppOpened = false;
@@ -111,7 +109,6 @@ public class LogoAnimation : MonoBehaviour
         yield return Timing.WaitForSeconds(endDelay);
         logoScreen.SetActive(false);
         beforeMainMenuLoadedScript.isReadyToLoadMainMenu = true;
-        // gameObject.SetActive(true);
     }
 
     IEnumerator<float> ImmediatelyPauseMusic()
