@@ -359,7 +359,6 @@ public class GameManager : MonoBehaviour
         HealProgressBar.isOccupiedByInfectedPerson = true;
         PersonController.infectedPeopleTotal = 0;
         PauseManager.isPaused = false;
-        AdManager.isInitialized = false;
         Time.timeScale = 1;  // Resetting time scale when restarting or quitting game
         Debug.Log("Static variables reset!");
     }

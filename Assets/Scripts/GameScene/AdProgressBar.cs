@@ -3,10 +3,15 @@ using UnityEngine.UI;
 
 public class AdProgressBar : MonoBehaviour
 {
-    public float progressTime = 5f;
+    [SerializeField] float progressTime = 5f;
     internal float progressTimer = 0;
-    public bool isFillReversed;
-    public Image fill;
+    [SerializeField] bool isFillReversed;
+    [SerializeField] Image fill;
+
+    void OnEnable()
+    {
+        progressTimer = 0;
+    }
 
     void Update()
     {
