@@ -2,9 +2,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HighScoreLogger : MonoBehaviour
+public class HighScoreManager : MonoBehaviour
 {
-    internal static HighScoreLogger instance;
+    internal static HighScoreManager instance;
     [SerializeField] internal int gameMode = -1;
 
     internal string[] highScoreStrings = {"GM0HighScore", "GM1HighScore", "GM2HighScore", "GM3HighScore", "GM4HighScore", "GM5HighScore", "GM6HighScore", "GM7HighScore"};  //{Optional: rename}

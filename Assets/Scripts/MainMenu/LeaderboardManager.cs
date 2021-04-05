@@ -73,7 +73,7 @@ public class LeaderboardManager : MonoBehaviour
     void Start()
     {
 		allOnlineHighScores = new HighScore[publicCodes.Length][];
-		myLocalHighScores = HighScoreLogger.instance.GetHighScores(true);
+		myLocalHighScores = HighScoreManager.instance.GetHighScores(true);
 		myUsernameText.text = "Username: " + username;
 		DisplayLocalHighScore();
 	}
@@ -164,7 +164,7 @@ public class LeaderboardManager : MonoBehaviour
 		request.timeout = Constants.connectionTimeoutTime;
 		yield return request.SendWebRequest();
 
-		string gameModeHighScoreString = HighScoreLogger.instance.highScoreStrings[gameMode];
+		string gameModeHighScoreString = HighScoreManager.instance.highScoreStrings[gameMode];
 		if (string.IsNullOrEmpty(request.error))
 		{
 			finishedLeaderboardUpdates++;

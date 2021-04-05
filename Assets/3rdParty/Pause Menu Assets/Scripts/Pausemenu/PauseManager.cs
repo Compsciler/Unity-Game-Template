@@ -285,7 +285,7 @@ namespace GreatArcStudios
         /// </summary>
         public void Start()
         {
-            pauseButton.onClick.AddListener(delegate{Pause(true);});  //| Adds event listener to Pause function with parameter
+            pauseButton.onClick.AddListener(Pause);  //| Adds event listener to Pause function
 
             readUseSimpleTerrain = useSimpleTerrain;
             if (useSimpleTerrain)
@@ -375,6 +375,10 @@ namespace GreatArcStudios
         /// Method to resume the game, so disable the pause menu and re-enable all other ui elements
         /// </summary>
         
+        public void Pause()
+        {
+            Pause(true);
+        }
         public void Pause(bool modifyTimeScale)  //| Moved code into function and added parameter
         {
             uiEventSystem.SetSelectedGameObject(defualtSelectedMain);
@@ -392,7 +396,7 @@ namespace GreatArcStudios
             }
             else
             {
-                GameManager.instance.isGameActive = false;  //{ERROR: dependent on GameManager.cs
+                //| Not implemented
             }
             for (int i = 0; i < otherUIElements.Length; i++)
             {
@@ -403,6 +407,10 @@ namespace GreatArcStudios
                  blurEffect.enabled = true;
              }  */
         }
+        public void Resume()
+        {
+            Resume(true);
+        }
         public void Resume(bool modifyTimeScale)  //| Added parameter
         {
             if (modifyTimeScale)
@@ -411,7 +419,7 @@ namespace GreatArcStudios
             }
             else
             {
-                GameManager.instance.isGameActive = true;  //{ERROR: dependent on GameManager.cs
+                //| Not implemented
             }
             mainPanel.SetActive(false);
             vidPanel.SetActive(false);
@@ -477,13 +485,6 @@ namespace GreatArcStudios
         /// </summary>
         public void Update()
         {
-            /*
-            if (!GameManager.instance.isGameActive && pauseButton.interactable == true)  //| Added
-            {
-                pauseButton.interactable = false;
-            }
-            */
-
             readUseSimpleTerrain = useSimpleTerrain;
             useSimpleTerrain = readUseSimpleTerrain;
             //colorCrossfade();
@@ -502,14 +503,11 @@ namespace GreatArcStudios
 
             if (Input.GetKeyDown(KeyCode.Escape) && mainPanel.active == false && pauseButton.interactable)  //| Added last parameter
             {
-                Pause(true);  //| Replaced with function call
+                Pause();  //| Replaced with function call
             }
             else if(Input.GetKeyDown(KeyCode.Escape) && mainPanel.active == true) {
-                Resume(true);  //| Replaced with function call
+                Resume();  //| Replaced with function call
             }
-
-
-
         }
         /*
         void colorCrossfade()

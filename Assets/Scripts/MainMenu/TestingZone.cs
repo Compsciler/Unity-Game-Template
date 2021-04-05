@@ -29,12 +29,12 @@ public class TestingZone : MonoBehaviour
                     switch (parsedStringArr[0])
                     {
                         case "UHS":  // Update high score
-                            HighScoreLogger.instance.gameMode = int.Parse(parsedStringArr[1]);
-                            HighScoreLogger.instance.UpdateHighScore(int.Parse(parsedStringArr[2]), true);
+                            HighScoreManager.instance.gameMode = int.Parse(parsedStringArr[1]);
+                            HighScoreManager.instance.UpdateHighScore(int.Parse(parsedStringArr[2]), true);
                             Debug.Log("Game Mode " + parsedStringArr[1] + " high score updated to " + parsedStringArr[2]);
                             break;
                         case "UAGM":  // Unlock all game modes
-                            HighScoreLogger.instance.UnlockAllGameModes(int.Parse(parsedStringArr[1]));
+                            HighScoreManager.instance.UnlockAllGameModes(int.Parse(parsedStringArr[1]));
                             Debug.Log("Unlocked all game modes");
                             break;
                         case "CU":  // Change username (only for testing, doesn't modify database)

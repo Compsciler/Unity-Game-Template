@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
 
         try  // When starting game in GameScene scene
         {
-            ApplyGameModeSettings(HighScoreLogger.instance.gameMode);
+            ApplyGameModeSettings(HighScoreManager.instance.gameMode);
         }
         catch (NullReferenceException)
         {
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over!");
 
             int newScore = spawnPeopleScript.CalculateScore();
-            HighScoreLogger.instance.UpdateHighScore(newScore, false);
+            HighScoreManager.instance.UpdateHighScore(newScore, false);
         }
     }
 

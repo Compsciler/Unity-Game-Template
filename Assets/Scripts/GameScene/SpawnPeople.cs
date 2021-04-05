@@ -254,7 +254,7 @@ public class SpawnPeople : MonoBehaviour
     public void UpdateUnlockedModeText(int prevHighScore)
     {
         //string debugString = "(" + prevHighScore + ")";
-        int[] highScores = HighScoreLogger.instance.GetHighScores(false);
+        int[] highScores = HighScoreManager.instance.GetHighScores(false);
 
         List<int> unlockedModes = new List<int>();
         for (int i = 0; i < DifficultySelectMenu.gameModeUnlockReqs.Length; i++)
@@ -268,7 +268,7 @@ public class SpawnPeople : MonoBehaviour
                 // int newScore = wave;
                 int minScoreReq = currentUnlockReqs[j, 1];
                 // debugString += "[" + j + "]";
-                if (currentUnlockReqs[j, 0] == HighScoreLogger.instance.gameMode)
+                if (currentUnlockReqs[j, 0] == HighScoreManager.instance.gameMode)
                 {
                     int newScore = wave;
                     if (newScore >= minScoreReq && prevHighScore < minScoreReq)
@@ -299,7 +299,7 @@ public class SpawnPeople : MonoBehaviour
             unlockedModeText.gameObject.SetActive(true);
             if (unlockedModes.Count == 1)
             {
-                string unlockedModeName = HighScoreLogger.instance.highScoreStrings[unlockedModes[0] - 1].Replace("HighScore", "");
+                string unlockedModeName = HighScoreManager.instance.highScoreStrings[unlockedModes[0] - 1].Replace("HighScore", "");
                 unlockedModeText.text = "You have unlocked " + unlockedModeName + " Mode!";
             }
             else

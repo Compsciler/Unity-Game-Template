@@ -67,7 +67,7 @@ public class DifficultySelectMenu : MonoBehaviour
         Timing.RunCoroutine(PlayStartCoroutine());
         AudioManager.instance.musicSource.Stop();
 
-        HighScoreLogger.instance.gameMode = gameMode;
+        HighScoreManager.instance.gameMode = gameMode;
     }
 
     IEnumerator<float> PlayStartCoroutine()
@@ -108,7 +108,7 @@ public class DifficultySelectMenu : MonoBehaviour
 
     private void SetUpUnlocksAndScores()
     {
-        int[] highScores = HighScoreLogger.instance.GetHighScores(false);
+        int[] highScores = HighScoreManager.instance.GetHighScores(false);
 
         for (int i = 0; i < gameModeUnlockReqs.Length; i++)
         {
