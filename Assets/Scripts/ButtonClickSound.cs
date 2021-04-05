@@ -8,4 +8,8 @@ public class ButtonClickSound : MonoBehaviour
     {
         AudioManager.instance.SFX_Source.PlayOneShot(clickSounds[soundNum]);
     }
+    public void PlaySound(AudioClip sound)
+    {
+        AudioManager.instance.SFX_Source.PlayOneShot(sound);
+    }
 }

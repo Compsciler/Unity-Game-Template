@@ -392,7 +392,7 @@ namespace GreatArcStudios
             }
             else
             {
-                GameManager.instance.isGameActive = false;
+                GameManager.instance.isGameActive = false;  //{ERROR: dependent on GameManager.cs
             }
             for (int i = 0; i < otherUIElements.Length; i++)
             {
@@ -411,7 +411,7 @@ namespace GreatArcStudios
             }
             else
             {
-                GameManager.instance.isGameActive = true;
+                GameManager.instance.isGameActive = true;  //{ERROR: dependent on GameManager.cs
             }
             mainPanel.SetActive(false);
             vidPanel.SetActive(false);

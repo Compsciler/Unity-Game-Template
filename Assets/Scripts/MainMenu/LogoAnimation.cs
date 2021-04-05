@@ -84,6 +84,10 @@ public class LogoAnimation : MonoBehaviour
             timer += Time.deltaTime;
             yield return Timing.WaitForOneFrame;
         }
+        if (isLogoScreenSpedUp)
+        {
+            nameText.color = new Color(svgImageColor.r, svgImageColor.g, svgImageColor.b, 1);
+        }
         svgImage.color = new Color(svgImageColor.r, svgImageColor.g, svgImageColor.b, 1);
 
         if (!isLogoScreenSpedUp)
