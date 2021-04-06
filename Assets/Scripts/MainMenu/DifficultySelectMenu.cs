@@ -8,14 +8,14 @@ using TMPro;
 
 public class DifficultySelectMenu : MonoBehaviour
 {
-    [SerializeField] GameObject[] difficultyButtons;
-
+    [SerializeField] GameObject difficultyButtonsHolder;
     [SerializeField] GameObject pressedButtonImagesHolder;
     [SerializeField] GameObject scoreTextsHolder;
     [SerializeField] GameObject lockIconsHolder;
     [SerializeField] GameObject startButtonsHolder;
     [SerializeField] GameObject descriptionTextsHolder;
 
+    private GameObject[] difficultyButtons;
     private GameObject[] pressedButtonImages;
     private GameObject[] scoreTexts;
     private GameObject[] lockIcons;
@@ -30,7 +30,7 @@ public class DifficultySelectMenu : MonoBehaviour
     [SerializeField] GameObject[] enableOnFirstTimePlaying;
 
     // https://stackoverflow.com/questions/5849548/is-this-array-initialization-incorrect
-    //{Game mode unlock requirements, in order by the game mode (starting from tutorial here) considered for requirements}
+    //{ Game mode unlock requirements, in order by the game mode (starting from tutorial here) considered for requirements
     internal static int[][,] gameModeUnlockReqs = new int[][,]{
         new int[,] {{}},
         new int[,] {{}},
@@ -109,10 +109,10 @@ public class DifficultySelectMenu : MonoBehaviour
     private void SetUpUnlocksAndScores()
     {
         int[] highScores = HighScoreManager.instance.GetHighScores(false);
+        int highScoreIndex = 0;
 
         for (int i = 0; i < gameModeUnlockReqs.Length; i++)
         {
-            // GameObject difficultyButton = difficultyButtons[i];
             int[,] currentUnlockReqs = gameModeUnlockReqs[i];
             bool currentUnlockReqsMet = true;
             for (int j = 0; j < currentUnlockReqs.Length / 2; j++)  // Foreach loop doesn't work somehow, probably because C# Length property returns total number of integers in array
@@ -135,9 +135,10 @@ public class DifficultySelectMenu : MonoBehaviour
                 {
 
                 }
-                if (i >= 1 && i < highScores.Length + 1)  // Does not access scores of Tutorial and Custom Mode  //{Optional: change if needed}
+                if (difficultyButtons[i].GetComponent<DifficultyButton>().hasHighScore)  // Does not access scores of Tutorial and Custom Mode  //{ Optional: change if needed
                 {
-                    int highScore = highScores[i - 1];
+                    int highScore = highScores[highScoreIndex];
+                    highScoreIndex++;
                     if (highScore > 0)
                     {
                         TMP_Text scoreText = scoreTexts[i].GetComponent<TMP_Text>();
@@ -150,6 +151,7 @@ public class DifficultySelectMenu : MonoBehaviour
 
     private void SetDifficultyButtonRelatedUI()
     {
+        difficultyButtons = difficultyButtonsHolder.GetChildren();
         pressedButtonImages = pressedButtonImagesHolder.GetChildren();
         scoreTexts = scoreTextsHolder.GetChildren();
         lockIcons = lockIconsHolder.GetChildren();

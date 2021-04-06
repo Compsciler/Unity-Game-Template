@@ -56,14 +56,6 @@ public class AdManager2 : MonoBehaviour, IUnityAdsListener
         Timing.RunCoroutine(ShowAd());
     }
 
-    public void ShowAdIfNotAllClear()
-    {
-        if (PlayerPrefs.GetInt("IsAllClear") == 0 && Constants.isMobilePlatform)
-        {
-            Timing.RunCoroutine(ShowAd());
-        }
-    }
-
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
         Debug.Log("OnUnityAdsFinish");

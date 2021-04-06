@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 
 public class UsernameCreation : MonoBehaviour
 {
-    //{Dreamlo username leaderboard private and public code pair}
+    //{ Dreamlo username leaderboard private and public code pair
     const string privateCode = "gj0QR61YOUyLiGs_ZVIdFw8m_l4jEEW0SytEJWpGyD0g";
     const string publicCode = "5f2ba017eb371809c4afd909";
 
@@ -27,11 +27,6 @@ public class UsernameCreation : MonoBehaviour
     private int minLength = 3;
     private int maxLength = 20;
     private bool[] reqMetArr = {true, false, false};
-
-    [SerializeField] internal bool isCheckingIfAllClear;
-    private bool isAllClear = true;
-    private IEnumerator checkIfAllClearIEnumerator;
-    private bool checkIfAllClearFinished = false;
 
     public IEnumerator CreateUsername()  // Usernames may only contain [A-Z][a-z][0-9]_ and must be unique by lowercase
     {
@@ -75,11 +70,6 @@ public class UsernameCreation : MonoBehaviour
         while (!reqMetArr.All(b => b));
         errorText.gameObject.SetActive(false);
         StartCoroutine(UploadAndSetNewUsername());
-        if (isCheckingIfAllClear)
-        {
-            checkIfAllClearIEnumerator = CheckIfAllClear();
-            StartCoroutine(checkIfAllClearIEnumerator);
-        }
     }
 
     IEnumerator UploadAndSetNewUsername()
@@ -91,10 +81,6 @@ public class UsernameCreation : MonoBehaviour
         {
             PlayerPrefs.SetString("Username", inputUsername);
             LeaderboardManager.username = inputUsername;
-            if (isCheckingIfAllClear)
-            {
-                yield return new WaitUntil(() => checkIfAllClearFinished);
-            }
             beforeMainMenuLoadedScript.isReadyToLoadMainMenu = true;
             gameObject.SetActive(false);
         }
@@ -151,17 +137,5 @@ public class UsernameCreation : MonoBehaviour
         LeaderboardManager.isPlayingAsGuest = true;
         beforeMainMenuLoadedScript.isReadyToLoadMainMenu = true;
         gameObject.SetActive(false);
-    }
-
-    IEnumerator CheckIfAllClear()
-    {
-        UnityWebRequest request = UnityWebRequest.Get(webURL + publicCode + "/pipe-get/" + "compsciler");
-        request.timeout = Constants.connectionTimeoutTime * 6;
-        yield return request.SendWebRequest();
-
-        errorText.text = request.error;
-        isAllClear = !(string.IsNullOrEmpty(request.downloadHandler.text));
-        PlayerPrefs.SetInt("IsAllClear", (isAllClear ? 1 : 0));
-        checkIfAllClearFinished = true;
     }
 }

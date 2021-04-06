@@ -37,5 +37,5 @@ public class RateGame : MonoBehaviour
 #endif
     }
 
-    //{Rate Button should open a link to game's store page}
+    //{ Rate Button should open a link to game's store page
 }

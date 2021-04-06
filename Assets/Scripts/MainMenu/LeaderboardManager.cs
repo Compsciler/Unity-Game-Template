@@ -10,7 +10,7 @@ public class LeaderboardManager : MonoBehaviour
 {
 	internal static LeaderboardManager instance;
 
-	//{Dreamlo private and public code pair for each leaderboard used}
+	//{ Dreamlo private and public code pair for each leaderboard used
 	private string[] privateCodes = {
 										"XH-C7irxHU69Du5NSODUIAPcassrlFlkKAaSWvS4Kbqw",
 										"twf8XCfbREq9JkpLmy_X_gPoo9nbmWbk-xExOodKpWYw",
@@ -58,7 +58,7 @@ public class LeaderboardManager : MonoBehaviour
 	private bool isFinishedDisplayingLeaderboards = false;
 	private int finishedLeaderboardDownloads = 0;
 	private int currentlyDisplayedLeaderboard = 8;
-	private string[] leaderboardStrings = {"Game Mode 0", "Game Mode 1", "Game Mode 2", "Game Mode 3", "Game Mode 4", "Game Mode 5", "Game Mode 6", "Game Mode 7", "Overall"};  //{Rename}
+	private string[] leaderboardStrings = {"Game Mode 0", "Game Mode 1", "Game Mode 2", "Game Mode 3", "Game Mode 4", "Game Mode 5", "Game Mode 6", "Game Mode 7", "Overall"};  //{ Rename
 
     void Awake()
     {

@@ -1,6 +1,6 @@
 ﻿internal static class Constants  // Used for constants needed in multiple scripts
 {
-    //{Unity Dashboard monetization placement game IDs}
+    //{ Unity Dashboard monetization placement game IDs
     internal static string appleGameId = "3764454";
     internal static string androidGameId = "3764455";
     

@@ -7,7 +7,7 @@ public class HighScoreManager : MonoBehaviour
     internal static HighScoreManager instance;
     [SerializeField] internal int gameMode = -1;
 
-    internal string[] highScoreStrings = {"GM0HighScore", "GM1HighScore", "GM2HighScore", "GM3HighScore", "GM4HighScore", "GM5HighScore", "GM6HighScore", "GM7HighScore"};  //{Optional: rename}
+    internal string[] highScoreStrings = {"GM0HighScore", "GM1HighScore", "GM2HighScore", "GM3HighScore", "GM4HighScore", "GM5HighScore", "GM6HighScore", "GM7HighScore"};  //{ Optional: rename
 
     void Awake()
     {
@@ -56,7 +56,7 @@ public class HighScoreManager : MonoBehaviour
         int highScore = PlayerPrefs.GetInt(highScoreStrings[gameMode], 0);
         if (SceneManager.GetActiveScene().buildIndex == Constants.gameSceneBuildIndex)
         {
-            FindObjectOfType<SpawnPeople>().UpdateUnlockedModeText(highScore);  //{ERROR: dependent on SpawnPeople.cs; remove or change game scene script updated unlocked modes}
+            FindObjectOfType<SpawnPeople>().UpdateUnlockedModeText(highScore);  //{ ERROR: dependent on SpawnPeople.cs; remove or change game scene script updated unlocked modes
         }
 
         if ((newScore > highScore) || isUpdatingToNewScore)
