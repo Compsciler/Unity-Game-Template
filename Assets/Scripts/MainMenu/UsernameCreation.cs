@@ -8,10 +8,9 @@ using UnityEngine.Networking;
 public class UsernameCreation : MonoBehaviour
 {
     //{ Dreamlo username leaderboard private and public code pair
-    const string privateCode = "gj0QR61YOUyLiGs_ZVIdFw8m_l4jEEW0SytEJWpGyD0g";
-    const string publicCode = "5f2ba017eb371809c4afd909";
-
-    const string webURL = "http://dreamlo.com/lb/";
+    private string privateCode = "gj0QR61YOUyLiGs_ZVIdFw8m_l4jEEW0SytEJWpGyD0g";
+    private string publicCode = "5f2ba017eb371809c4afd909";
+    private string webURL = "http://dreamlo.com/lb/";
 
     [SerializeField] GameObject mainMenu;
     [SerializeField] TMP_InputField inputField;
@@ -79,7 +78,7 @@ public class UsernameCreation : MonoBehaviour
 
         if (string.IsNullOrEmpty(request.error))
         {
-            PlayerPrefs.SetString("Username", inputUsername);
+            PlayerPrefs.SetString(Constants.prefsUsername, inputUsername);
             LeaderboardManager.username = inputUsername;
             beforeMainMenuLoadedScript.isReadyToLoadMainMenu = true;
             gameObject.SetActive(false);
@@ -132,7 +131,7 @@ public class UsernameCreation : MonoBehaviour
         return (inputUsername.Length >= minLength && inputUsername.Length <= maxLength);
     }
 
-    public void PlayAsGuest()  // Temporarily sets username as "Guest"
+    public void PlayAsGuest()  // Temporarily sets username as guest username
     {
         LeaderboardManager.isPlayingAsGuest = true;
         beforeMainMenuLoadedScript.isReadyToLoadMainMenu = true;

@@ -42,7 +42,7 @@ public class LogoAnimation : MonoBehaviour
         {
             gameObject.SetActive(false);
             logoScreen.SetActive(true);
-            isLogoScreenSpedUp = (PlayerPrefs.GetInt("IsLogoScreenSpedUp", defaultSpeed) == 1);
+            isLogoScreenSpedUp = (PlayerPrefs.GetInt(Constants.prefsIsLogoScreenSpedUp, defaultSpeed) == 1);
             Timing.RunCoroutine(AnimationProcess());
         }
         else
@@ -137,28 +137,28 @@ public class LogoAnimation : MonoBehaviour
 
     public void ToggleLogoScreenSpeed()
     {
-        if (PlayerPrefs.GetInt("IsLogoScreenSpedUp") == 0)
+        if (PlayerPrefs.GetInt(Constants.prefsIsLogoScreenSpedUp) == 0)
         {
-            PlayerPrefs.SetInt("IsLogoScreenSpedUp", 1);
+            PlayerPrefs.SetInt(Constants.prefsIsLogoScreenSpedUp, 1);
         }
         else
         {
-            PlayerPrefs.SetInt("IsLogoScreenSpedUp", 0);
+            PlayerPrefs.SetInt(Constants.prefsIsLogoScreenSpedUp, 0);
         }
         DisplayCorrectLogoScreenSpeedUI();
     }
 
     public void DisplayCorrectLogoScreenSpeedUI()
     {
-        if (PlayerPrefs.GetInt("IsLogoScreenSpedUp", defaultSpeed) == 1)
+        if (PlayerPrefs.GetInt(Constants.prefsIsLogoScreenSpedUp, defaultSpeed) == 1)
         {
             logoSpeedButton.GetComponent<Image>().sprite = logoScreenSpedUpSprite;
-            PlayerPrefs.SetInt("IsLogoScreenSpedUp", 1);
+            PlayerPrefs.SetInt(Constants.prefsIsLogoScreenSpedUp, 1);
         }
         else
         {
             logoSpeedButton.GetComponent<Image>().sprite = logoScreenNormalSpeedSprite;
-            PlayerPrefs.SetInt("IsLogoScreenSpedUp", 0);
+            PlayerPrefs.SetInt(Constants.prefsIsLogoScreenSpedUp, 0);
         }
     }
 }

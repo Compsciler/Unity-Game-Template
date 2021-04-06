@@ -50,10 +50,10 @@ public class DifficultySelectMenu : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("IsFirstTimePlaying", 1) == 1)
+        if (PlayerPrefs.GetInt(Constants.prefsIsFirstTimePlaying, 1) == 1)
         {
             SetEachActive(enableOnFirstTimePlaying, true);
-            PlayerPrefs.SetInt("IsFirstTimePlaying", 0);
+            PlayerPrefs.SetInt(Constants.prefsIsFirstTimePlaying, 0);
         }
     }
 
@@ -124,7 +124,7 @@ public class DifficultySelectMenu : MonoBehaviour
                     currentUnlockReqsMet = false;
                 }
             }
-            if (currentUnlockReqsMet || PlayerPrefs.GetInt("AreAllGameModesUnlocked", 0) == 1)
+            if (currentUnlockReqsMet || PlayerPrefs.GetInt(Constants.prefsAreAllGameModesUnlocked, 0) == 1)
             {
                 lockIcons[i].SetActive(false);
                 try

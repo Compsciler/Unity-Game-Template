@@ -14,7 +14,7 @@ public class LeaderboardManager2 : MonoBehaviour
 	private string[] publicCodes =  {
 										"5f4c06eaeb371809c4001b89"
 									};
-	const string webURL = "http://dreamlo.com/lb/";
+	private string webURL = "http://dreamlo.com/lb/";
 
 	internal static string username;
 
@@ -49,7 +49,7 @@ public class LeaderboardManager2 : MonoBehaviour
 		allOnlineHighScores = new HighScore2[publicCodes.Length][];
 		username = LeaderboardManager.username;
 		myUsernameText.text = "Username: " + username;
-		// myLocalHighScores = new int[] {PlayerPrefs.GetInt("BonusGameHighScore")};
+		// myLocalHighScores = new int[] {PlayerPrefs.GetInt(Constants.prefsBonusGameHighScore)};
 		// DisplayLocalHighScore();
 	}
 
@@ -61,7 +61,7 @@ public class LeaderboardManager2 : MonoBehaviour
 			messageText.text = "";
 			StartCoroutine(DownloadAllHighScores(maxScores));
 		}
-		myLocalHighScores = new int[] {PlayerPrefs.GetInt("BonusGameHighScore")};
+		myLocalHighScores = new int[] {PlayerPrefs.GetInt(Constants.prefsBonusGameHighScore) };
 		DisplayLocalHighScore();
 	}
 

@@ -87,11 +87,11 @@ public class GameManager2 : MonoBehaviour
 
     public void UpdateHighScore(int newScore, bool isUpdatingToNewScore)
     {
-        int highScore = PlayerPrefs.GetInt("BonusGameHighScore", 0);
+        int highScore = PlayerPrefs.GetInt(Constants.prefsBonusGameHighScore, 0);
 
         if ((newScore > highScore) || isUpdatingToNewScore)
         {
-            PlayerPrefs.SetInt("BonusGameHighScore", newScore);
+            PlayerPrefs.SetInt(Constants.prefsBonusGameHighScore, newScore);
             Debug.Log("BonusGameHighScore changed from " + highScore + " to " + newScore);
         }
     }

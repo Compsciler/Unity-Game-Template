@@ -77,6 +77,6 @@ public class HighScoreManager : MonoBehaviour
 
     public void UnlockAllGameModes(int value)
     {
-        PlayerPrefs.SetInt("AreAllGameModesUnlocked", value);  // Restart needed if switching setting from 1 to 0
+        PlayerPrefs.SetInt(Constants.prefsAreAllGameModesUnlocked, value);  // Restart needed if switching setting from 1 to 0
     }
 }

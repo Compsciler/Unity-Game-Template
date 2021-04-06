@@ -4,6 +4,6 @@ public class AdditionalSFX_Source : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<AudioSource>().mute = (PlayerPrefs.GetInt("IsSFX_Muted") == 1);
+        GetComponent<AudioSource>().mute = (PlayerPrefs.GetInt(Constants.prefsIsSFX_Muted) == 1);
     }
 }

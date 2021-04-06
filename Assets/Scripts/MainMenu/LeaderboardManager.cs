@@ -34,7 +34,7 @@ public class LeaderboardManager : MonoBehaviour
 										"5f2ba0bbeb371809c4afdaaf",
 										"5f2b9566eb371809c4afbe68"
 									};
-	const string webURL = "http://dreamlo.com/lb/";
+	private string webURL = "http://dreamlo.com/lb/";
 
 	internal static string username;
 	internal static bool isPlayingAsGuest = false;

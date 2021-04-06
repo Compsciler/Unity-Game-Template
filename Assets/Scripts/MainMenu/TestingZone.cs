@@ -38,15 +38,15 @@ public class TestingZone : MonoBehaviour
                             Debug.Log("Unlocked all game modes");
                             break;
                         case "CU":  // Change username (only for testing, doesn't modify database)
-                            PlayerPrefs.SetString("Username", parsedStringArr[1]);
-                            Debug.Log("Username changed from " + PlayerPrefs.GetString("Username") + " to " + parsedStringArr[1]);
+                            PlayerPrefs.SetString(Constants.prefsUsername, parsedStringArr[1]);
+                            Debug.Log("Username changed from " + PlayerPrefs.GetString(Constants.prefsUsername) + " to " + parsedStringArr[1]);
                             break;
                         case "DU":  // Delete username (only for testing, doesn't modify database)
-                            PlayerPrefs.SetString("Username", null);
+                            PlayerPrefs.SetString(Constants.prefsUsername, null);
                             Debug.Log("Deleted username");
                             break;
                         case "RSRRT":  // Reset store review request total
-                            PlayerPrefs.SetInt("StoreReviewRequestTotal", 0);
+                            PlayerPrefs.SetInt(Constants.prefsStoreReviewRequestTotal, 0);
                             Debug.Log("Reset store review request total");
                             break;
                     }

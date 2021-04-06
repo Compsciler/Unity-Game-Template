@@ -25,7 +25,7 @@ public class RateGame : MonoBehaviour
             Device.RequestStoreReview();
 #endif
             isReadyToRequestStoreReview = false;
-            PlayerPrefs.SetInt("StoreReviewRequestTotal", 1);
+            PlayerPrefs.SetInt(Constants.prefsStoreReviewRequestTotal, 1);
             Debug.Log("Ready to request store review!");
         }
     }

@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
             gameOverMenu.SetActive(true);
             Debug.Log("Tutorial Complete!");
 
-            if (PlayerPrefs.GetInt("StoreReviewRequestTotal", 0) == 0)
+            if (PlayerPrefs.GetInt(Constants.prefsStoreReviewRequestTotal, 0) == 0)  //{ Optional: Add more non-tutorial conditions to be ready to request store review
             {
                 RateGame.isReadyToRequestStoreReview = true;
             }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BeforeMainMenuLoaded : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class BeforeMainMenuLoaded : MonoBehaviour
         if (isReadyToLoadMainMenu)
         {
             isReadyToLoadMainMenu = false;
-            if (PlayerPrefs.GetString("Username", "").Equals("") && !LeaderboardManager.isPlayingAsGuest)
+            if (PlayerPrefs.GetString(Constants.prefsUsername, "").Equals("") && !LeaderboardManager.isPlayingAsGuest)
             {
                 StartCoroutine(usernameCreationMenu.GetComponent<UsernameCreation>().CreateUsername());
             }
@@ -23,11 +22,11 @@ public class BeforeMainMenuLoaded : MonoBehaviour
             {
                 if (LeaderboardManager.isPlayingAsGuest)
                 {
-                    LeaderboardManager.username = "Guest";
+                    LeaderboardManager.username = Constants.guestUsername;
                 }
                 else
                 {
-                    LeaderboardManager.username = PlayerPrefs.GetString("Username");
+                    LeaderboardManager.username = PlayerPrefs.GetString(Constants.prefsUsername);
                 }
                 mainMenu.SetActive(true);
                 AudioManager.instance.musicSource.Play();
