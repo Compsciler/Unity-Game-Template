@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class TimerBar : MonoBehaviour
+public class TimerBar2 : MonoBehaviour
 {
     public float maxValue;
     private float currentValue;
