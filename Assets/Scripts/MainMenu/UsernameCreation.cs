@@ -19,7 +19,6 @@ public class UsernameCreation : MonoBehaviour
 
     private string inputUsername;
     private bool isDoneWritingUsername = false;
-    private IEnumerator checkIfUsernameIsUniqueIEnumerator;
     private bool checkIfUsernameIsUniqueFinished = false;
     private bool isConnectionTimedOut = false;
 
@@ -45,8 +44,7 @@ public class UsernameCreation : MonoBehaviour
             reqMetArr[2] = IsLengthValid();
             if (reqMetArr[1] && reqMetArr[2])
             {
-                checkIfUsernameIsUniqueIEnumerator = CheckIfUsernameIsUnique();
-                StartCoroutine(checkIfUsernameIsUniqueIEnumerator);
+                StartCoroutine(CheckIfUsernameIsUnique());
                 yield return new WaitUntil(() => checkIfUsernameIsUniqueFinished);
                 if (isConnectionTimedOut || !string.IsNullOrEmpty(errorText.text))
                 {
@@ -90,18 +88,6 @@ public class UsernameCreation : MonoBehaviour
         }
     }
 
-    IEnumerator ConnectionTimeout(IEnumerator runningIEnumerator)  // Unused
-    {
-        yield return new WaitForSeconds(Constants.connectionTimeoutTime);
-        StopCoroutine(runningIEnumerator);
-        
-        if (runningIEnumerator == checkIfUsernameIsUniqueIEnumerator)
-        {
-            isConnectionTimedOut = true;
-            checkIfUsernameIsUniqueFinished = true;
-        }
-    }
-
     public void SetIsDoneWritingUsername(bool value)
     {
         isDoneWritingUsername = value;
@@ -111,9 +97,7 @@ public class UsernameCreation : MonoBehaviour
     {
         UnityWebRequest request = UnityWebRequest.Get(webURL + publicCode + "/pipe-get/" + inputUsername.ToLower());  // Gets "score" for inputUsername if inputUsername exists
         request.timeout = Constants.connectionTimeoutTime;
-        // StartCoroutine(ConnectionTimeout(checkIfUsernameIsUniqueIEnumerator));
         yield return request.SendWebRequest();
-        // StopCoroutine(ConnectionTimeout(checkIfUsernameIsUniqueIEnumerator));
 
         errorText.text = request.error;
         reqMetArr[0] = (string.IsNullOrEmpty(request.downloadHandler.text));
