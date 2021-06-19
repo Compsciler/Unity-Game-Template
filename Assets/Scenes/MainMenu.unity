@@ -3015,10 +3015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3ab18d5a1231f4384ee4d3af19a88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyButtonsHolder: {fileID: 1413856393}
   pressedButtonImagesHolder: {fileID: 161400144}
-  scoreTextsHolder: {fileID: 1540645002}
-  lockIconsHolder: {fileID: 220240603}
   startButtonsHolder: {fileID: 1789668162}
   descriptionTextsHolder: {fileID: 15696570}
   fadingMask: {fileID: 3356552192991648854}
@@ -3030,6 +3027,9 @@ MonoBehaviour:
   - {fileID: 2031306676}
   - {fileID: 210565569}
   - {fileID: 1942936057}
+  difficultyButtonsHolder: {fileID: 1413856393}
+  scoreTextsHolder: {fileID: 1540645002}
+  lockIconsHolder: {fileID: 220240603}
 --- !u!1 &209084373
 GameObject:
   m_ObjectHideFlags: 0
@@ -6958,6 +6958,10 @@ PrefabInstance:
       propertyPath: nextMenu
       value: 
       objectReference: {fileID: 1259022829}
+    - target: {fileID: 970155810, guid: 5483c1e64bc01644c930b6673625519d, type: 3}
+      propertyPath: clickSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 970155810, guid: 5483c1e64bc01644c930b6673625519d, type: 3}
       propertyPath: mainCamera
       value: 
@@ -11165,6 +11169,10 @@ PrefabInstance:
       propertyPath: nextMenu
       value: 
       objectReference: {fileID: 1259022829}
+    - target: {fileID: 970155810, guid: 5483c1e64bc01644c930b6673625519d, type: 3}
+      propertyPath: clickSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 970155810, guid: 5483c1e64bc01644c930b6673625519d, type: 3}
       propertyPath: mainCamera
       value: 
@@ -26598,6 +26606,10 @@ PrefabInstance:
       propertyPath: nextMenu
       value: 
       objectReference: {fileID: 1259022829}
+    - target: {fileID: 970155810, guid: 5483c1e64bc01644c930b6673625519d, type: 3}
+      propertyPath: clickSound
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 970155810, guid: 5483c1e64bc01644c930b6673625519d, type: 3}
       propertyPath: mainCamera
       value: 

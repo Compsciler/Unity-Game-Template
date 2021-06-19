@@ -11,7 +11,7 @@ public class DifficultyButtonOnClick : ButtonOnClick
     public override void OnClickFunction()
     {
         base.OnClickFunction();
-        difficultySelectMenu.GetComponent<DifficultySelectMenu>().ResetMenuPresses();
+        difficultySelectMenu.GetComponent<DifficultySelectMenuUnlocking>().ResetMenuPresses();
         pressedButtonImage.SetActive(true);
         descriptionText.SetActive(true);
 

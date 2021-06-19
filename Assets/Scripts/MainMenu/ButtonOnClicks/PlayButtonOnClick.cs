@@ -9,6 +9,6 @@ public class PlayButtonOnClick : ButtonOnClick
     public override void OnClickFunction()
     {
         base.OnClickFunction();
-        difficultySelectMenu.GetComponent<DifficultySelectMenu>().Play(gameMode);
+        difficultySelectMenu.GetComponent<DifficultySelectMenuUnlocking>().Play(gameMode);
     }
 }

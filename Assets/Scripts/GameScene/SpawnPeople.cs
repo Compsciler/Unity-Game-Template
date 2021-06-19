@@ -257,9 +257,9 @@ public class SpawnPeople : MonoBehaviour
         int[] highScores = HighScoreManager.instance.GetHighScores();
 
         List<int> unlockedModes = new List<int>();
-        for (int i = 0; i < DifficultySelectMenu.gameModeUnlockReqs.Length; i++)
+        for (int i = 0; i < DifficultySelectMenuUnlocking.gameModeUnlockReqs.Length; i++)
         {
-            int[,] currentUnlockReqs = DifficultySelectMenu.gameModeUnlockReqs[i];
+            int[,] currentUnlockReqs = DifficultySelectMenuUnlocking.gameModeUnlockReqs[i];
             bool currentUnlockReqsMet = true;
             bool requiresCurrentModeAndScore = false;
             // debugString += " <" + i + ">";

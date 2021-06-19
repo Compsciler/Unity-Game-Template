@@ -58,4 +58,18 @@ public class TimerBar : MonoBehaviour
             fill.color = Color.HSVToRGB(Mathf.Lerp(0f, 1f, fillAmount), 1, 1);
         }
     }
+
+    public void AddTime(float addedTime)
+    {
+        currentValue += addedTime;
+        if (currentValue > maxValue)
+        {
+            currentValue = maxValue;
+        }
+    }
+
+    public void SetBarColor(Color color)
+    {
+        fill.color = color;
+    }
 }

@@ -64,10 +64,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-    }
 
-    void Start()
-    {
         mainCamera = Camera.main;
         generateWallsScript = spawnManager.GetComponent<GenerateWalls>();
         spawnPeopleScript = spawnManager.GetComponent<SpawnPeople>();
@@ -81,6 +78,11 @@ public class GameManager : MonoBehaviour
         {
             ApplyGameModeSettings(defaultGameMode);
         }
+    }
+
+    void Start()
+    {
+        
 
         // Timing.RunCoroutine(InfectionSpread());
         infectedPathDistances = new Dictionary<GameObject, float>();
@@ -170,7 +172,7 @@ public class GameManager : MonoBehaviour
 
             // GAME OVER SCREEN
             gameOverMenu.SetActive(true);
-            spawnPeopleScript.UpdateGameOverScoreText();
+            spawnPeopleScript.UpdateGameOverScoreText();  //{ Update game over text in GameOverMenu.cs instead
             AudioManager.instance.musicSource.Pause();
             AudioManager.instance.SFX_Source.PlayOneShot(gameOverSound, gameOverSoundVolume);
             Debug.Log("Game Over!");
