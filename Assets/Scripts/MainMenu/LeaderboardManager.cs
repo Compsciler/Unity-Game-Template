@@ -60,7 +60,19 @@ public class LeaderboardManager : MonoBehaviour
 	private int currentlyDisplayedLeaderboard = 8;
 	private string[] leaderboardStrings = {"Game Mode 0", "Game Mode 1", "Game Mode 2", "Game Mode 3", "Game Mode 4", "Game Mode 5", "Game Mode 6", "Game Mode 7", "Overall"};  //{ Rename
 
-    void Awake()
+	private int[][] leaderboardHighScoreGameModeSums =	{
+															new int[] {0},
+															new int[] {1},
+															new int[] {2},
+															new int[] {3},
+															new int[] {4},
+															new int[] {5},
+															new int[] {6},
+															new int[] {7},
+															new int[] {0, 1, 2, 3, 4, 5, 6, 7}
+														};
+
+	void Awake()
     {
 		if (instance == null)
 		{
@@ -73,7 +85,7 @@ public class LeaderboardManager : MonoBehaviour
     void Start()
     {
 		allOnlineHighScores = new HighScore[publicCodes.Length][];
-		myLocalHighScores = HighScoreManager.instance.GetHighScores(true);
+		myLocalHighScores = HighScoreManager.instance.GetLeaderboardHighScoreSums(leaderboardHighScoreGameModeSums);
 		myUsernameText.text = "Username: " + username;
 		DisplayLocalHighScore();
 	}
@@ -121,26 +133,17 @@ public class LeaderboardManager : MonoBehaviour
 			}
 		}
 
-		for (int i = 0; i < myOnlineHighScores.Length - 1; i++)
+		for (int i = 0; i < myOnlineHighScores.Length; i++)
         {
 			if (myLocalHighScores[i] > myOnlineHighScores[i])
             {
-				StartCoroutine(UploadGameModeHighScore(i, myLocalHighScores[i]));
+				StartCoroutine(UploadHighScore(i, myLocalHighScores[i]));
             }
             else
             {
 				finishedLeaderboardUpdates++;
             }
         }
-		int overallHighScoreIndex = myOnlineHighScores.Length - 1;
-		if (myLocalHighScores[overallHighScoreIndex] > myOnlineHighScores[overallHighScoreIndex])
-        {
-			StartCoroutine(UploadOverallHighScore(myLocalHighScores[overallHighScoreIndex]));
-        }
-        else
-        {
-			finishedLeaderboardUpdates++;
-		}
 		yield return new WaitUntil(() => finishedLeaderboardUpdates == myOnlineHighScores.Length);
 		messageText.text = "Upload successful!";
 		isFinishedDisplayingLeaderboards = false;
@@ -152,19 +155,13 @@ public class LeaderboardManager : MonoBehaviour
 		StartCoroutine(UploadAllHighScores());
     }
 
-	public void UploadNewHighScores(int gameMode, int gameModeHighScore, int overallHighScore)  // Unused
-	{
-		StartCoroutine(UploadGameModeHighScore(gameMode, gameModeHighScore));
-		StartCoroutine(UploadOverallHighScore(overallHighScore));
-	}
-
-	IEnumerator UploadGameModeHighScore(int gameMode, int score)
+	IEnumerator UploadHighScore(int leaderboardNum, int score)
     {
-		UnityWebRequest request = UnityWebRequest.Get(webURL + privateCodes[gameMode] + "/add/" + UnityWebRequest.EscapeURL(username) + "/" + score);
+		UnityWebRequest request = UnityWebRequest.Get(webURL + privateCodes[leaderboardNum] + "/add/" + UnityWebRequest.EscapeURL(username) + "/" + score);
 		request.timeout = Constants.connectionTimeoutTime;
 		yield return request.SendWebRequest();
 
-		string gameModeHighScoreString = HighScoreManager.instance.highScoreStrings[gameMode];
+		string gameModeHighScoreString = leaderboardStrings[leaderboardNum];
 		if (string.IsNullOrEmpty(request.error))
 		{
 			finishedLeaderboardUpdates++;
@@ -176,26 +173,6 @@ public class LeaderboardManager : MonoBehaviour
 			StopCoroutine(UploadAllHighScores());
 			uploadScoresButtonComponent.interactable = true;
 			Debug.Log("Error uploading " + gameModeHighScoreString + ": " + request.error);
-		}
-	}
-
-	IEnumerator UploadOverallHighScore(int score)
-    {
-		UnityWebRequest request = UnityWebRequest.Get(webURL + privateCodes[privateCodes.Length - 1] + "/add/" + UnityWebRequest.EscapeURL(username) + "/" + score);
-		request.timeout = Constants.connectionTimeoutTime;
-		yield return request.SendWebRequest();
-
-		if (string.IsNullOrEmpty(request.error))
-		{
-			finishedLeaderboardUpdates++;
-			// Debug.Log("Upload Successful with OverallHighScore");
-		}
-		else
-		{
-			messageText.text = "<color=#FF4040>Check your internet connection and try again.</color>";
-			StopCoroutine(UploadAllHighScores());
-			uploadScoresButtonComponent.interactable = true;
-			Debug.Log("Error uploading OverallHighScore" + ": " + request.error);
 		}
 	}
 
@@ -238,7 +215,7 @@ public class LeaderboardManager : MonoBehaviour
 		StartCoroutine(DownloadHighScores(leaderboardNum, maxScores));
 	}
 
-	void FormatHighScores(int leaderboardNum, string textStream)
+	public void FormatHighScores(int leaderboardNum, string textStream)
 	{
 		string[] entries = textStream.Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
 		HighScore[] currentOnlineHighScores = new HighScore[entries.Length];
@@ -254,7 +231,7 @@ public class LeaderboardManager : MonoBehaviour
 		allOnlineHighScores[leaderboardNum] = currentOnlineHighScores;
 	}
 
-	void DisplayHighScores()
+	public void DisplayHighScores()
     {
 		for (int i = 0; i < publicCodes.Length; i++)
         {
@@ -282,7 +259,7 @@ public class LeaderboardManager : MonoBehaviour
 		DisplayLocalHighScore();
 	}
 
-	void DisplayLocalHighScore()
+	public void DisplayLocalHighScore()
     {
 		myLocalScoreText.text = "Score: " + myLocalHighScores[currentlyDisplayedLeaderboard];
     }

@@ -20,6 +20,7 @@
 
     internal static string guestUsername = "Guest";
 
+    //{ Delete agent IDs
     internal static int healthyAgentID = -1372625422;
     internal static int infectedAgentID = -334000983;
     internal static int recentlyHealedAgentID = 1479372276;

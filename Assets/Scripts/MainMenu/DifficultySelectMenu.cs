@@ -106,14 +106,14 @@ public class DifficultySelectMenu : MonoBehaviour
 
     private void SetUpUnlocksAndScores()
     {
-        int[] highScores = HighScoreManager.instance.GetHighScores(false);
+        int[] highScores = HighScoreManager.instance.GetHighScores();
         int highScoreIndex = 0;
 
         for (int i = 0; i < gameModeUnlockReqs.Length; i++)
         {
             int[,] currentUnlockReqs = gameModeUnlockReqs[i];
             bool currentUnlockReqsMet = true;
-            for (int j = 0; j < currentUnlockReqs.Length / 2; j++)  // Foreach loop doesn't work somehow, probably because C# Length property returns total number of integers in array
+            for (int j = 0; j < currentUnlockReqs.Length / 2; j++)  // Foreach loop doesn't work somehow, probably because C# Length property returns total number of integers in array, could change to .GetLength(0)
             {
                 int highScoreForReq = highScores[currentUnlockReqs[j, 0]];
                 int minScoreReq = currentUnlockReqs[j, 1];

@@ -24,36 +24,52 @@ public class HighScoreManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public int[] GetHighScores(bool isIncludingOverallHighScore)
+    public int[] GetLeaderboardHighScoreSums(int[][] highScoreSums)
     {
-        int[] highScores;
-        if (isIncludingOverallHighScore)
+        int[] leaderboardHighScores = new int[highScoreSums.Length];
+        for (int i = 0; i < highScoreSums.Length; i++)
         {
-            highScores = new int[highScoreStrings.Length + 1];
+            leaderboardHighScores[i] = GetHighScoreSum(highScoreSums[i]);
         }
-        else
-        {
-            highScores = new int[highScoreStrings.Length];
-        }
+        return leaderboardHighScores;
+    }
+
+    public int[] GetHighScores()
+    {
+        int[] highScores = new int[highScoreStrings.Length];
         for (int i = 0; i < highScoreStrings.Length; i++)
         {
-            highScores[i] = PlayerPrefs.GetInt(highScoreStrings[i], 0);
-        }
-        if (isIncludingOverallHighScore)
-        {
-            highScores[highScores.Length - 1] = GetOverallHighScore();
+            highScores[i] = GetHighScore(i);
         }
         return highScores;
     }
 
-    public int GetOverallHighScore()
+    public int GetHighScore(int gameMode)
     {
-        return GetHighScores(false).Sum();
+        return PlayerPrefs.GetInt(highScoreStrings[gameMode], 0);
+    }
+    public void SetHighScore(int gameMode, int newScore)
+    {
+        PlayerPrefs.SetInt(highScoreStrings[gameMode], newScore);
+    }
+
+    public int GetHighScoreSum(int[] gameModes)
+    {
+        int[] highScores = GetHighScores();
+        int highScoreSum = 0;
+        for (int i = 0; i < highScores.Length; i++)
+        {
+            if (gameModes.Contains(i))
+            {
+                highScoreSum += highScores[i];
+            }
+        }
+        return highScoreSum;
     }
 
     public void UpdateHighScore(int newScore, bool isUpdatingToNewScore)
     {
-        int highScore = PlayerPrefs.GetInt(highScoreStrings[gameMode], 0);
+        int highScore = GetHighScore(gameMode);
         if (SceneManager.GetActiveScene().buildIndex == Constants.gameSceneBuildIndex)
         {
             FindObjectOfType<SpawnPeople>().UpdateUnlockedModeText(highScore);  //{ ERROR: dependent on SpawnPeople.cs; remove or change game scene script updated unlocked modes
@@ -61,7 +77,7 @@ public class HighScoreManager : MonoBehaviour
 
         if ((newScore > highScore) || isUpdatingToNewScore)
         {
-            PlayerPrefs.SetInt(highScoreStrings[gameMode], newScore);
+            SetHighScore(gameMode, newScore);
             Debug.Log(highScoreStrings[gameMode] + " changed from " + highScore + " to " + newScore);
         }
     }
@@ -70,7 +86,7 @@ public class HighScoreManager : MonoBehaviour
     {
         for (int i = 0; i < highScoreStrings.Length; i++)
         {
-            PlayerPrefs.SetInt(highScoreStrings[i], 0);
+            SetHighScore(i, 0);
         }
         Debug.Log("High scores reset!");
     }

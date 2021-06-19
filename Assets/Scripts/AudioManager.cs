@@ -20,13 +20,13 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
+
+        SFX_Source = GetComponents<AudioSource>()[0];
+        musicSource = GetComponents<AudioSource>()[1];
     }
 
     void Start()
     {
-        SFX_Source = GetComponents<AudioSource>()[0];
-        musicSource = GetComponents<AudioSource>()[1];
-
         DisplayCorrectSFX();
         DisplayCorrectMusic();
     }
@@ -46,16 +46,16 @@ public class AudioManager : MonoBehaviour
 
     public void ToggleMusic(bool unpauseOnUnmute)
     {
-        if (PlayerPrefs.GetInt(Constants.prefsIsSFX_Muted) == 0)
+        if (PlayerPrefs.GetInt(Constants.prefsIsMusicMuted) == 0)
         {
-            PlayerPrefs.SetInt(Constants.prefsIsSFX_Muted, 1);
+            PlayerPrefs.SetInt(Constants.prefsIsMusicMuted, 1);
         }
         else
         {
-            PlayerPrefs.SetInt(Constants.prefsIsSFX_Muted, 0);
+            PlayerPrefs.SetInt(Constants.prefsIsMusicMuted, 0);
         }
         DisplayCorrectMusic();
-        if (PlayerPrefs.GetInt(Constants.prefsIsSFX_Muted) == 0 && unpauseOnUnmute)
+        if (PlayerPrefs.GetInt(Constants.prefsIsMusicMuted) == 0 && unpauseOnUnmute)
         {
             musicSource.UnPause();
         }
@@ -66,27 +66,39 @@ public class AudioManager : MonoBehaviour
         if (PlayerPrefs.GetInt(Constants.prefsIsSFX_Muted, 0) == 1)
         {
             SFX_Source.mute = true;
-            SFX_MuteButton.GetComponent<Image>().sprite = SFX_MutedSprite;
+            if (SFX_MuteButton != null)
+            {
+                SFX_MuteButton.GetComponent<Image>().sprite = SFX_MutedSprite;
+            }
         }
         else
         {
             SFX_Source.mute = false;
-            SFX_MuteButton.GetComponent<Image>().sprite = SFX_UnmutedSprite;
+            if (SFX_MuteButton != null)
+            {
+                SFX_MuteButton.GetComponent<Image>().sprite = SFX_UnmutedSprite;
+            }
         }
     }
 
     public void DisplayCorrectMusic()
     {
-        if (PlayerPrefs.GetInt(Constants.prefsIsSFX_Muted, 0) == 1)
+        if (PlayerPrefs.GetInt(Constants.prefsIsMusicMuted, 0) == 1)
         {
             musicSource.mute = true;  // Muting to not need checking for all pausing and unpausing situations in the game scene
             musicSource.Pause();
-            musicMuteButton.GetComponent<Image>().sprite = musicMutedSprite;
+            if (musicMuteButton != null)
+            {
+                musicMuteButton.GetComponent<Image>().sprite = musicMutedSprite;
+            }
         }
         else
         {
             musicSource.mute = false;
-            musicMuteButton.GetComponent<Image>().sprite = musicUnmutedSprite;
+            if (musicMuteButton != null)
+            {
+                musicMuteButton.GetComponent<Image>().sprite = musicUnmutedSprite;
+            }
         }
     }
 }

@@ -945,6 +945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1 &76216297
 GameObject:
@@ -1866,6 +1867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1001 &142347054
 PrefabInstance:
@@ -3019,7 +3021,6 @@ MonoBehaviour:
   lockIconsHolder: {fileID: 220240603}
   startButtonsHolder: {fileID: 1789668162}
   descriptionTextsHolder: {fileID: 15696570}
-  playButtonSound: {fileID: 8300000, guid: 4d7a44e566e205e4c8ea001cadda369c, type: 3}
   fadingMask: {fileID: 3356552192991648854}
   fadeTime: 1.5
   enableAfterFading:
@@ -3669,6 +3670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1 &277146606
 GameObject:
@@ -12419,6 +12421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 1
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!114 &1023978455
 MonoBehaviour:
@@ -13583,6 +13586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1 &1121058077
 GameObject:
@@ -17496,6 +17500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1001 &1459257726
 PrefabInstance:
@@ -18724,6 +18729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1 &1568745159
 GameObject:
@@ -19955,6 +19961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 2
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1001 &1653552139
 PrefabInstance:
@@ -21047,6 +21054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1 &1701056595
 GameObject:
@@ -21374,6 +21382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1 &1705031506
 GameObject:
@@ -25626,7 +25635,7 @@ MonoBehaviour:
 
     SVG sprites by me:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 36d6004f008bd91459b813bf1b27d209, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -25690,7 +25699,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2028998118
@@ -26998,6 +27007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!1001 &1906906313214113732
 PrefabInstance:
@@ -27386,6 +27396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: 0
   customClickSound: {fileID: 0}
+  clickSoundVolume: 1
   mainCamera: {fileID: 1172870079}
 --- !u!222 &2836507068798720370
 CanvasRenderer:
