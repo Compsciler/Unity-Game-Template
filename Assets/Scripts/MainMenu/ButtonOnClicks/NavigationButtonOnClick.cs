@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 
-public class NavigationButtonOnClick : MonoBehaviour
+public class NavigationButtonOnClick : ButtonOnClick
 {
     [SerializeField] GameObject currentMenu;
     [SerializeField] GameObject nextMenu;
-    [SerializeField] AudioClip buttonClickSound;
 
-    [SerializeField] GameObject mainCamera;
-
-    public void OnClickFunction()
+    public override void OnClickFunction()
     {
+        base.OnClickFunction();
         currentMenu.SetActive(false);
         nextMenu.SetActive(true);
-        mainCamera.GetComponent<ButtonClickSound>().PlaySound(buttonClickSound);
     }
 }

@@ -22,7 +22,6 @@ public class DifficultySelectMenu : MonoBehaviour
     private GameObject[] startButtons;
     private GameObject[] descriptionTexts;
 
-    [SerializeField] AudioClip playButtonSound;
     [SerializeField] GameObject fadingMask;
     [SerializeField] float fadeTime;
     [SerializeField] GameObject[] enableAfterFading;
@@ -74,7 +73,6 @@ public class DifficultySelectMenu : MonoBehaviour
     {
         fadingMask.SetActive(true);
         CoroutineHandle fadeBackgroundCoroutine = Timing.RunCoroutine(FadeBackground());
-        AudioManager.instance.SFX_Source.PlayOneShot(playButtonSound);
         yield return Timing.WaitUntilDone(fadeBackgroundCoroutine);
         SetEachActive(enableAfterFading, true);
         SceneManager.LoadSceneAsync(Constants.gameSceneBuildIndex);

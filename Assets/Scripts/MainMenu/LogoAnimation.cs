@@ -117,6 +117,7 @@ public class LogoAnimation : MonoBehaviour
 
     IEnumerator<float> ImmediatelyPauseMusic()
     {
+        yield return Timing.WaitForOneFrame;
         while (true)
         {
             try

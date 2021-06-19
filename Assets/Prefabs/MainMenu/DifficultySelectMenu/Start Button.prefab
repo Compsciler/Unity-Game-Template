@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1421532064618616882}
   - component: {fileID: 1986132630873880121}
   m_Layer: 5
-  m_Name: Normal Start Button
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,6 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebac09e2ba4f7d24fa41cbf4d30519c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: 4
+  customClickSound: {fileID: 8300000, guid: 4d7a44e566e205e4c8ea001cadda369c, type: 3}
+  mainCamera: {fileID: 0}
   gameMode: 0
   difficultySelectMenu: {fileID: 0}
 --- !u!1 &1421532065944705019

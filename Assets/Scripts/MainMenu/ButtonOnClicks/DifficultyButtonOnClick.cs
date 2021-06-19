@@ -1,22 +1,19 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DifficultyButtonOnClick : MonoBehaviour
+public class DifficultyButtonOnClick : ButtonOnClick
 {
     [SerializeField] GameObject pressedButtonImage;
     [SerializeField] GameObject startButton;
     [SerializeField] GameObject descriptionText;
-    [SerializeField] AudioClip buttonClickSound;
 
     [SerializeField] GameObject difficultySelectMenu;
-    [SerializeField] GameObject mainCamera;
 
-    public void OnClickFunction()
+    public override void OnClickFunction()
     {
+        base.OnClickFunction();
         difficultySelectMenu.GetComponent<DifficultySelectMenu>().ResetMenuPresses();
         pressedButtonImage.SetActive(true);
         descriptionText.SetActive(true);
-        mainCamera.GetComponent<ButtonClickSound>().PlaySound(buttonClickSound);
 
         try
         {

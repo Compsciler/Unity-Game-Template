@@ -278,7 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f1eb3cd32797e4f8827dfdd858acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: 2
+  customClickSound: {fileID: 0}
+  mainCamera: {fileID: 0}
   currentMenu: {fileID: 0}
   nextMenu: {fileID: 0}
-  buttonClickSound: {fileID: 8300000, guid: 72cd3e9bc29af4c57a62e91883166b7b, type: 3}
-  mainCamera: {fileID: 0}

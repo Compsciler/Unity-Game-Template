@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 
-public class PlayButtonOnClick : MonoBehaviour
+public class PlayButtonOnClick : ButtonOnClick
 {
     [SerializeField] int gameMode;
 
     [SerializeField] GameObject difficultySelectMenu;
 
-    public void OnClickFunction()
+    public override void OnClickFunction()
     {
+        base.OnClickFunction();
         difficultySelectMenu.GetComponent<DifficultySelectMenu>().Play(gameMode);
     }
 }
