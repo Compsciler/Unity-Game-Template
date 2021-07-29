@@ -63,7 +63,8 @@ public class DialogueManager : MonoBehaviour
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
-			Timing.RunCoroutine(GameManager.instance.GameOver(), "GameOver");  // Tag not necessary
+			StartState.isGameJustOver = true;
+			// Timing.RunCoroutine(GameManager.instance.GameOver(), "GameOver");  // Tag not necessary
 			return;
 		}
 

@@ -2098,18 +2098,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 273999001}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &284075861 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 76713111698327886, guid: f4bae0ec5c5d9de4998030d73c2f969a,
-    type: 3}
-  m_PrefabInstance: {fileID: 76713111969230363}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &285431275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,6 +2108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 285431277}
   - component: {fileID: 285431276}
+  - component: {fileID: 285431278}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2153,17 +2142,10 @@ MonoBehaviour:
   adMenu: {fileID: 961811627}
   peopleGO: {fileID: 2028451025}
   isResettingDelayedSymptoms: 1
-  gameOverMenu: {fileID: 1529839682}
-  gameOverText: {fileID: 284075861}
-  scoreText: {fileID: 1965020087}
   countdownEndSound: {fileID: 8300000, guid: 2e071f5b8b8467d45a5e6e24c23c6ad4, type: 3}
   countdownEndSoundVolume: 0.5
   gameOverSound: {fileID: 8300000, guid: 621021c5c1681d14f93532a2ad5e8148, type: 3}
   gameOverSoundVolume: 0.8
-  fadingMask: {fileID: 474412342}
-  fadeInTime: 1
-  minTransparency: 0.125
-  maxTransparency: 0.625
   infectionDeathDuration: 40
   canHealthyHeal: 0
   areSymptomsDelayed: 0
@@ -2194,6 +2176,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285431278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285431275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f2bc606cbe9ea4e8f83c41ebad5eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverMenu: {fileID: 1529839684}
 --- !u!1 &292653932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,11 +3831,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f3674de9fef124baa76d0911cc654e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSounds:
-  - {fileID: 8300000, guid: c552440b081774d49b22540760112fcc, type: 3}
-  - {fileID: 8300000, guid: 094883d45533c884f941a7dab201bcbc, type: 3}
-  - {fileID: 8300000, guid: 72cd3e9bc29af4c57a62e91883166b7b, type: 3}
-  - {fileID: 8300000, guid: f5ab874fd1f4a4c7cb3ff691b729fbfa, type: 3}
+  defaultSound: {fileID: 0}
+  backSound: {fileID: 0}
+  mainNavigationSound: {fileID: 0}
+  otherSound1: {fileID: 0}
 --- !u!114 &534669910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9430,12 +9424,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1529839682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 76713112692452953, guid: f4bae0ec5c5d9de4998030d73c2f969a,
-    type: 3}
-  m_PrefabInstance: {fileID: 76713111969230363}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1529839683 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 76713112692452952, guid: f4bae0ec5c5d9de4998030d73c2f969a,
@@ -9448,7 +9436,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 76713111969230363}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529839682}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 667d407950c02e24e961360aee2b91d0, type: 3}
@@ -14801,6 +14789,11 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 534669902}
+    - target: {fileID: 76713112692452959, guid: f4bae0ec5c5d9de4998030d73c2f969a,
+        type: 3}
+      propertyPath: fadingMaskGO
+      value: 
+      objectReference: {fileID: 474412342}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bae0ec5c5d9de4998030d73c2f969a, type: 3}
 --- !u!1001 &3932065288608728531

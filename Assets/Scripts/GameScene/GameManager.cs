@@ -30,21 +30,25 @@ public class GameManager : MonoBehaviour
     // internal static bool isReadyToRequestStoreReview = false;
 
     private GenerateWalls generateWallsScript;
-    private SpawnPeople spawnPeopleScript;
+    internal SpawnPeople spawnPeopleScript;
     private TileDisabler tileDisablerScript;
 
     internal Dictionary<GameObject, float> infectedPathDistances;  // Disabled for now
+    /*
     public GameObject gameOverMenu;
     public TMP_Text gameOverText;
     public TMP_Text scoreText;
+    */
     public AudioClip countdownEndSound;
     public float countdownEndSoundVolume;
     public AudioClip gameOverSound;
     public float gameOverSoundVolume;
+    /*
     public GameObject fadingMask;
     public float fadeInTime;
     public float minTransparency;
     public float maxTransparency;
+    */
 
     private int defaultGameMode = 0;
 
@@ -82,8 +86,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
-
         // Timing.RunCoroutine(InfectionSpread());
         infectedPathDistances = new Dictionary<GameObject, float>();
         if (gameCountdownTime > 0)
@@ -127,6 +129,7 @@ public class GameManager : MonoBehaviour
         isGameActivePreviousFrame = isGameActive;  // isGameActive set to false in GameOver(), which happens from InfectionProcess() coroutine; hopefully coroutines always execute before LateUpdate()
     }
 
+    /*
     public IEnumerator<float> GameOver()
     {
         isGameActive = false;
@@ -181,8 +184,9 @@ public class GameManager : MonoBehaviour
             HighScoreManager.instance.UpdateHighScore(newScore, false);
         }
     }
+    */
 
-    void ResetInfectionTimers()
+    public void ResetInfectionTimers()
     {
         List<GameObject> trulyInfectedPeople = new List<GameObject>();
         foreach (GameObject person in ExtensionMethods.GetChildren(peopleGO))
@@ -341,6 +345,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /*
     public IEnumerator<float> FadeObjectsBehindMenu()
     {
         fadingMask.SetActive(true);
@@ -353,6 +358,7 @@ public class GameManager : MonoBehaviour
             yield return Timing.WaitForOneFrame;
         }
     }
+    */
 
     public void ResetStaticVariables()
     {

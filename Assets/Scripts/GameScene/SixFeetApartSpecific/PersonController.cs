@@ -518,7 +518,8 @@ public class PersonController : MonoBehaviour
         // Timing.KillCoroutines("SinusoidalRadius " + GetInstanceID());
         // infectionCylinderScript.gameObject.SetActive(false);
         agent.isStopped = true;
-        Timing.RunCoroutine(GameManager.instance.GameOver(), "GameOver");
+        StartState.isGameJustOver = true;  // Try not to use internal static state variables in the future
+        // Timing.RunCoroutine(GameManager.instance.GameOver(), "GameOver");
     }
 
     IEnumerator<float> PlayInfectionParticles()

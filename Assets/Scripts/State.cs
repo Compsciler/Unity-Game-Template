@@ -13,4 +13,9 @@ public abstract class State  // Derive with a constructor with a system paramete
     {
         yield return Timing.WaitForOneFrame;
     }
+
+    public virtual void OnStateUpdate()
+    {
+
+    }
 }

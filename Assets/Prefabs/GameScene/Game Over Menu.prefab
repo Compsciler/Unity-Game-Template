@@ -1056,6 +1056,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667d407950c02e24e961360aee2b91d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  titleText: {fileID: 76713111698327886}
+  descriptionText: {fileID: 76713112188075436}
+  fadingMaskGO: {fileID: 0}
+  fadeInTime: 1
+  minTransparency: 0.125
+  maxTransparency: 0.625
   restartButtonClickSound: {fileID: 8300000, guid: c552440b081774d49b22540760112fcc,
     type: 3}
   goToMainMenuButtonClickSound: {fileID: 8300000, guid: 094883d45533c884f941a7dab201bcbc,
